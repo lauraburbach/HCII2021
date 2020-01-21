@@ -61,28 +61,25 @@ Our world is more complex than years ago. Understanding what leads to complexity
 --->
 <!--- Ca. 3 bis 4 Seiten --->
 # Related Work
-In this study, we consider whether it is possible tp create an Agent-based model with the programming language Netlogo and the programming language Julia. We further consider, how the two languages differ, which are the strenghths for creating Agent-based models of each programming language and which are the X. Contentwise, we built a bounded rationality model to simulate opinion formation. 
+In this study, using Agent-based modelling we consider opinion formation processes, thus we look at a complex system. We want to know, whether it is possible tp create an Agent-based model with the programming language Netlogo and the programming language Julia. We further consider, how the two languages differ, which are the strenghths for creating Agent-based models of each programming language and which are the X. Contentwise, we built a bounded rationality model to simulate opinion formation. 
 
-Therefore, we introduce
-
-explain what is 
-
-
-what influences how messages are spread in online social networks using an agent-based simulation. 
-Therefore, we explain what is known in theory about the spread of information and the formation of opinions in this section. We further introduce the latent process model, on which we built our simulation and explain further aspects that are important for the agent-based simulation.
-
-
-Using two different programming languages (Julia language and Netlogo), we created two identical agent-based models that simulate opinion formation. Since our primary aim was to find out whether agent-based models could be implemented equally well in the two programming languages, we chose the most basic model of opinion-forming: bounded rationality. 
-
+Therefore, we explain, which aspects lead to complexity, we introduce the method Agent-based modelling and the two programming languages Netlogo and Julia. Besides, we eplain what is knwon in theory about opinion formation or the spread of information. 
 
 ## Complexity
-When examining opinion-forming processes, we look at a complex system. Such complex systems lead to emergent phenomena. Complex systems and emergent phenomena are difficult to understand, because while it is easy to observe the individual system components, the resulting overall system cannot be considered as the sum of its parts. Instead, understanding the system behavior requires more than understanding the individual parts of the system [@Valdez2018human].  
+When examining opinion-forming processes, we look at a complex system. Such complex systems can be divided into several ontological levels or interacting subsystems on a micro- or macro-level [@Conte2012]. Further, complex systems lead to emergent phenomena. These complex systems and emergent phenomena are difficult to understand, because while it is easy to observe the individual system components, the resulting overall system cannot be considered as the sum of its parts. Instead, understanding the system behavior requires more than understanding the individual parts of the system [@Valdez2018human].  
 
-To analyse complex systems we need a suitable approach, such as simulations, which enable to model the individual parts of a system and thus make the overall behavior visible. For the simulation of complex systems, Agent-based models are very well suited [@Epstein2007]. Agent-based models always consist of the agents or individuals and the environment in which the agents reside [@Bonabeau2002Agentbased]. 
- 
-To create agent-based models, Netlogo [@Wilensky1999] is the language most commonly used. Nevertheless, there are some other programming languages that are also suitable for creating agent-based models and that seem to be partly more intuitive, at least for people with programming experience. Therefore, in this study we compare two programming languages with respect to their suitability for creating agent-based models. 
+To analyse complex systems we need a suitable approach, such as simulations, which enable to model the individual parts of a system and thus make the overall behavior visible. For the simulation of complex systems, Agent-based models are very well suited [@Epstein2007]. 
+
 
 ## Complex systems/Complexity
+## Agent-based modelling
+Agent-based models always consist of the agents or individuals and the environment in which the agents reside [@Bonabeau2002Agentbased]. They are neither a representation of reality, nor fully realistic or even complete.  Instead, they show a simplified reality. Nevertheless, agent-based models show behaviour on an individual level close to reality. By mapping the individual behavior, the behavior of the overall system can then be qualitatively observed. The use of a method always requires an evaluation of the method. Evaluating agent-based models is not easy. In order to evaluate them, independent replicating and comparing with other model as well as a validation are necessary [@Rouchier2008].  
+
+ 
+To create agent-based models, Netlogo [@Wilensky1999] is the language most commonly used. Nevertheless, there are some other programming languages that are also suitable for creating agent-based models and that seem to be partly more intuitive, at least for people with programming experience. Therefore, in this study we compare two programming languages with respect to their suitability for creating agent-based models. 
+## Netlogo
+## Julia
+## Opinion formation/spread of information
 
 
 <!--- Ca. 3 bis 4 Seiten --->
