@@ -98,7 +98,9 @@ In this study, we compared two programming languages. We used version 6.0.4 of t
 ## Bounded rationality model
 Since our primary goal was to compare the two programming languages with each other, we designed the parameters of the Netlogo model and the Julia model the identical way. Thus, we increased the comparability of the results of both models and reduced the complexity as much as possible. Table Y shows the settings, that we determined from the beginning of the model.   
 
+### Opinion
 
+### Network
 
 ## Before the model starts
 
