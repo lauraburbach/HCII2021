@@ -90,6 +90,18 @@ In our bounded rationality model, we defined the maximum number of agents, the m
 
 We build the agent based models using either the Julia programming language or Netlogo. For the following analysis of the results we used R Markdown. 
 
+## Netlogo
+In this study, we compared two programming languages. We used version 6.0.4 of the multi-agent programming language Netlogo, which was developed by Uri Wilensky [@Wilensky1999]. Netlogo is visually appealing because the user is provided with a user interface to create and test an agent-based model. In addition to the user interface that simplifies the initial creation of a model, Netlogo also includes a batch mode that allows the user to run any number (usually several hundred) of simulations. 
+
+## Julia
+
+## Bounded rationality model
+Since our primary goal was to compare the two programming languages with each other, we designed the parameters of the Netlogo model and the Julia model the identical way. Thus, we increased the comparability of the results of both models and reduced the complexity as much as possible. Table Y shows the settings, that we determined from the beginning of the model.   
+
+
+
+## Before the model starts
+
 ## What do we compare
 To find out whether both programming languages are euqually suitable to simulate our bounded rationality model, we look at severeal measurable criteria. These criteria include the outcomes and performance of both models. They further include how many lines of code are necessary to program the simulation. Another aspect, that we take into consideration, is, if learning Julia and Netlogo is equally difficult. For this aspect we consider both computer scientists who are familiar with other programming languages and a person who has no previous experience with programming languages. We further compare the explorability and scalability of both languages.
 
