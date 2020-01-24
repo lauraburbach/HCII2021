@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  23 JAN 2020 14:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  24 JAN 2020 14:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -867,6 +867,13 @@ Package biblatex Warning: The following entry could not be found
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
+(biblatex)                Kiesling2012
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
 (biblatex)                R-kableExtra
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
@@ -945,12 +952,13 @@ m/n/10 rmdtemplates \T1/lmr/m/n/10 (-20) [[][]2[][]].
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 258.
 [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 258.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 300.
+[5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 300.
 (./HCII2020Laura3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 258.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 258.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 300.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 300.
 Package rerunfilecheck Info: File `HCII2020Laura3.out' has not changed.
 (rerunfilecheck)             Checksum: B01F881A33CF43A09BB45E5FCB53AF94;108.
 Package logreq Info: Writing requests to 'HCII2020Laura3.run.xml'.
@@ -958,13 +966,13 @@ Package logreq Info: Writing requests to 'HCII2020Laura3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16134 strings out of 492616
- 270821 string characters out of 6129482
- 771767 words of memory out of 5000000
- 19731 multiletter control sequences out of 15000+600000
- 58257 words of font info for 85 fonts, out of 8000000 for 9000
+ 16159 strings out of 492616
+ 271133 string characters out of 6129482
+ 772073 words of memory out of 5000000
+ 19737 multiletter control sequences out of 15000+600000
+ 58506 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,6n,45p,824b,1791s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,7n,45p,824b,2755s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2019/
 texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-dist
@@ -980,10 +988,10 @@ type1/public/lm/lmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/lo
 cal/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texliv
 e/2019/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on HCII2020Laura3.pdf (4 pages, 263959 bytes).
+Output written on HCII2020Laura3.pdf (5 pages, 266724 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
+ 165 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
+ 53 named destinations out of 1000 (max. 500000)
  14345 words of extra memory for PDF output out of 14400 (max. 10000000)
 

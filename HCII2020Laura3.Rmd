@@ -73,7 +73,10 @@ To analyse complex systems we need a suitable approach, such as simulations, whi
 
 ## Complex systems/Complexity
 ## Agent-based modelling
-Agent-based models always consist of the agents or individuals and the environment in which the agents reside [@Bonabeau2002Agentbased]. They are neither a representation of reality, nor fully realistic or even complete.  Instead, they show a simplified reality. Nevertheless, agent-based models show behaviour on an individual level close to reality. By mapping the individual behavior, the behavior of the overall system can then be qualitatively observed. The use of a method always requires an evaluation of the method. Evaluating agent-based models is not easy. In order to evaluate them, independent replicating and comparing with other model as well as a validation are necessary [@Rouchier2008].  
+Agent-based models always consist of the agents or individuals and the environment in which the agents reside [@Bonabeau2002Agentbased]. They are neither a representation of reality, nor fully realistic or even complete.  Instead, they show a simplified reality. Nevertheless, agent-based models show behaviour on an individual level close to reality. By mapping the individual behavior, the behavior of the overall system can then be qualitatively observed [@Rouchier2008]. Agent-based models are well suited to replicate data and present the results to non-experts [@Kiesling2012]. The use of a method always requires an evaluation of the method. Evaluating agent-based models is not easy. In order to evaluate them, independent replicating and comparing with other model as well as a validation are necessary [@Rouchier2008].
+
+The basis of agent-based modeling is the single agent or the individual. This agent is modelled programmatically as a template. In simulation, due agents make their own decisions based on how they perceive the environment in which they are situated. Thus, in our model
+
 
  
 To create agent-based models, Netlogo [@Wilensky1999] is the language most commonly used. Nevertheless, there are some other programming languages that are also suitable for creating agent-based models and that seem to be partly more intuitive, at least for people with programming experience. Therefore, in this study we compare two programming languages with respect to their suitability for creating agent-based models. 

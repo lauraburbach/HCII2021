@@ -147,10 +147,18 @@ representation of reality, nor fully realistic or even complete.
 Instead, they show a simplified reality. Nevertheless, agent-based
 models show behaviour on an individual level close to reality. By
 mapping the individual behavior, the behavior of the overall system can
-then be qualitatively observed. The use of a method always requires an
-evaluation of the method. Evaluating agent-based models is not easy. In
-order to evaluate them, independent replicating and comparing with other
-model as well as a validation are necessary~\autocite{Rouchier2008}.
+then be qualitatively observed~\autocite{Rouchier2008}. Agent-based
+models are well suited to replicate data and present the results to
+non-experts~\autocite{Kiesling2012}. The use of a method always requires
+an evaluation of the method. Evaluating agent-based models is not easy.
+In order to evaluate them, independent replicating and comparing with
+other model as well as a validation are
+necessary~\autocite{Rouchier2008}.
+
+The basis of agent-based modeling is the single agent or the individual.
+This agent is modelled programmatically as a template. In simulation,
+due agents make their own decisions based on how they perceive the
+environment in which they are situated. Thus, in our model
 
 To create agent-based models, Netlogo~\autocite{Wilensky1999} is the
 language most commonly used. Nevertheless, there are some other
@@ -185,6 +193,40 @@ defined epsilon, then the two converge in their opinions.
 We build the agent based models using either the Julia programming
 language or Netlogo. For the following analysis of the results we used R
 Markdown.
+
+\hypertarget{netlogo}{%
+\subsection{Netlogo}\label{netlogo}}
+
+In this study, we compared two programming languages. We used version
+6.0.4 of the multi-agent programming language Netlogo, which was
+developed by Uri Wilensky~\autocite{Wilensky1999}. Netlogo is visually
+appealing because the user is provided with a user interface to create
+and test an agent-based model. In addition to the user interface that
+simplifies the initial creation of a model, Netlogo also includes a
+batch mode that allows the user to run any number (usually several
+hundred) of simulations.
+
+\hypertarget{julia}{%
+\subsection{Julia}\label{julia}}
+
+\hypertarget{bounded-rationality-model}{%
+\subsection{Bounded rationality model}\label{bounded-rationality-model}}
+
+Since our primary goal was to compare the two programming languages with
+each other, we designed the parameters of the Netlogo model and the
+Julia model the identical way. Thus, we increased the comparability of
+the results of both models and reduced the complexity as much as
+possible. Table Y shows the settings, that we determined from the
+beginning of the model.
+
+\hypertarget{opinion}{%
+\subsubsection{Opinion}\label{opinion}}
+
+\hypertarget{network}{%
+\subsubsection{Network}\label{network}}
+
+\hypertarget{before-the-model-starts}{%
+\subsection{Before the model starts}\label{before-the-model-starts}}
 
 \hypertarget{what-do-we-compare}{%
 \subsection{What do we compare}\label{what-do-we-compare}}
