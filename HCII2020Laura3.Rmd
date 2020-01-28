@@ -8,7 +8,7 @@ link-citations: true
 output:
   pdf_document:
     fig_caption: true
-    keep_tex: true
+    keep_tex: false
     template: lncs-template.tex
     md_extensions: +footnotes
     citation_package: biblatex
