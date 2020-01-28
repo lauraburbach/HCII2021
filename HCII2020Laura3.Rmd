@@ -1,6 +1,6 @@
 ---
 title: "Netlogo vs. Julia programming: The best way to simulate opinion formation"
-author-inputfile: "anonauthors.tex" 
+author-inputfile: "authors.tex" 
 keywords: "Simulation \\and Agent-based modells \\and Programming languages \\and Netlogo \\and Julia programming."
 bibliography: ["rpackages.bib", "bibliography.bib"]
 biblio-style: "apalike"
