@@ -29,11 +29,20 @@ data <- raw %>%
 
 write_csv(data, "netlogo_ouput.csv")
 
-data %>% ggplot() +
+data %>% filter(agent_count == 100, epsilon == 0.1, backfire == FALSE) %>% pull(run_number) 
+
+data %>% 
+#  filter(agent_count == 100) %>% 
+#  filter(run_number == 7) %>% 
+#  filter(epsilon == 0.2) %>% 
+#  filter(agent == 1) %>% 
+  ggplot() +
   aes(x = step, 
       y = list_op, 
-      group = interaction(agent, run_number)) + 
+      group = interaction(run_number, agent),
+      color = run_number
+      ) + 
   geom_line(alpha = 0.1) + 
-  facet_wrap(backfire~epsilon)
+  facet_grid(backfire~epsilon)
   
                 

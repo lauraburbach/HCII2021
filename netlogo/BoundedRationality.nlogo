@@ -49,9 +49,6 @@ to setup-turtles
     set color 11 + opinion * 8
   ]
 end
-
-
-
 @#$#@#$#@
 GRAPHICS-WINDOW
 210
@@ -140,7 +137,7 @@ num-turtles
 num-turtles
 0
 100
-1000.0
+200.0
 10
 1
 NIL
@@ -155,7 +152,7 @@ epsilon
 epsilon
 0
 1
-0.5
+0.9
 0.1
 1
 NIL
@@ -541,7 +538,7 @@ NetLogo 6.1.0
     <setup>setup</setup>
     <go>go</go>
     <timeLimit steps="100"/>
-    <metric>list ( [opinion] of turtles )</metric>
+    <metric>map [t -&gt; [opinion] of t] sort turtles</metric>
     <steppedValueSet variable="num-turtles" first="100" step="100" last="1000"/>
     <steppedValueSet variable="epsilon" first="0.1" step="0.1" last="1"/>
     <enumeratedValueSet variable="backfire">
