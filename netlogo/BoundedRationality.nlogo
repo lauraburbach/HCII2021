@@ -49,6 +49,14 @@ to setup-turtles
     set color 11 + opinion * 8
   ]
 end
+
+
+to my-timer [ ExperimentName ]
+        let thetime timer
+        file-open "timers.csv"
+        file-print (sentence ExperimentName "," thetime "," date-and-time )
+        file-close
+end
 @#$#@#$#@
 GRAPHICS-WINDOW
 210
@@ -152,7 +160,7 @@ epsilon
 epsilon
 0
 1
-0.9
+0.8
 0.1
 1
 NIL
@@ -540,6 +548,18 @@ NetLogo 6.1.0
     <timeLimit steps="100"/>
     <metric>map [t -&gt; [opinion] of t] sort turtles</metric>
     <steppedValueSet variable="num-turtles" first="100" step="100" last="1000"/>
+    <steppedValueSet variable="epsilon" first="0.1" step="0.1" last="1"/>
+    <enumeratedValueSet variable="backfire">
+      <value value="true"/>
+      <value value="false"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="experiment" repetitions="1" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="100"/>
+    <metric>map [t -&gt; [opinion] of t] sort turtles</metric>
+    <steppedValueSet variable="num-turtles" first="100" step="100" last="200"/>
     <steppedValueSet variable="epsilon" first="0.1" step="0.1" last="1"/>
     <enumeratedValueSet variable="backfire">
       <value value="true"/>
