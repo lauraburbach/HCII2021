@@ -99,11 +99,11 @@ function main()
     agent_counts = 100:100:1000
     epsilons = 0.1:0.1:1
     max_steps = [100]
-    replications = [1]
+    replications = [100]
     my_config = generateBatchConfig(agent_counts,
                                       epsilons,
                                       max_steps,
                                       replications)
     startandsave(my_config, "results.csv")
 end
-main()
+@time main()
