@@ -96,10 +96,10 @@ end
 ## Hauptprogramm
 function main()
     # create config objects
-    agent_counts = 100:100:1000
+    agent_counts = 100:100:500
     epsilons = 0.1:0.1:1
     max_steps = [100]
-    replications = [100]
+    replications = 1:50
     my_config = generateBatchConfig(agent_counts,
                                       epsilons,
                                       max_steps,
