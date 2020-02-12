@@ -63,6 +63,6 @@ osf_retrieve_node("bvqnt") %>%   # retrieve the project
 cat("Done!")
 
 # unzip the data?
-deompress_file("data", "netlogo.zip")
+decompress_file("data", "netlogo.zip")
 decompress_file("data", "julia.zip") # file is > 5Gb
 

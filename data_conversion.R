@@ -2,20 +2,13 @@
 
 library(tidyverse)
 
-
-
-
-
-
-
-
+# helper terminate function
 noop <- function(x){x}
 
-
+# optional parameter to limit the sorting
 limit_size <- 10
-
-
-input_file <- "BoundedRationality All-table.csv"
+# Where to load the data from
+input_file <- "data/BoundedRationality All-table.csv"
 
 
 raw <- read_csv(input_file, skip_empty_rows = T, skip = 6)
@@ -35,15 +28,15 @@ data <- raw %>%
   separate_rows(list_op, agent, sep = " ", convert = T) %>% 
   noop()
 
-write_csv(data, "netlogo_ouput.csv")
+write_rds(data, "data/netlogo_ouput.rds", compress = "gz")
 
 data %>% filter(agent_count == 100, epsilon == 0.1, backfire == FALSE) %>% pull(run_number) 
 
 data %>% 
-#  filter(agent_count == 100) %>% 
-#  filter(run_number == 7) %>% 
-#  filter(epsilon == 0.2) %>% 
-#  filter(agent == 1) %>% 
+  filter(agent_count == 100) %>% 
+  filter(run_number == 7) %>% 
+  filter(epsilon == 0.2) %>% 
+  filter(agent == 1) %>% 
   ggplot() +
   aes(x = step, 
       y = list_op, 
