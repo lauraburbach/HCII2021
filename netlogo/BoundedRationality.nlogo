@@ -51,7 +51,12 @@ to setup-turtles
 end
 
 
-
+to my-timer [ ExperimentName ]
+        let thetime timer
+        file-open "timers.csv"
+        file-print (sentence ExperimentName "," thetime "," date-and-time )
+        file-close
+end
 @#$#@#$#@
 GRAPHICS-WINDOW
 210
@@ -140,7 +145,7 @@ num-turtles
 num-turtles
 0
 100
-1000.0
+500.0
 10
 1
 NIL
@@ -155,7 +160,7 @@ epsilon
 epsilon
 0
 1
-0.5
+1.0
 0.1
 1
 NIL
@@ -186,7 +191,7 @@ SWITCH
 133
 backfire
 backfire
-0
+1
 1
 -1000
 
@@ -537,12 +542,26 @@ NetLogo 6.1.0
 @#$#@#$#@
 @#$#@#$#@
 <experiments>
-  <experiment name="All" repetitions="100" runMetricsEveryStep="true">
+  <experiment name="All" repetitions="50" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
+    <final>my-timer "run1"</final>
     <timeLimit steps="100"/>
-    <metric>list ( [opinion] of turtles )</metric>
-    <steppedValueSet variable="num-turtles" first="100" step="100" last="1000"/>
+    <metric>map [t -&gt; [opinion] of t] sort turtles</metric>
+    <steppedValueSet variable="num-turtles" first="100" step="100" last="500"/>
+    <steppedValueSet variable="epsilon" first="0.1" step="0.1" last="1"/>
+    <enumeratedValueSet variable="backfire">
+      <value value="true"/>
+      <value value="false"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="experiment" repetitions="1" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>go</go>
+    <final>my-timer "test"</final>
+    <timeLimit steps="100"/>
+    <metric>map [t -&gt; [opinion] of t] sort turtles</metric>
+    <steppedValueSet variable="num-turtles" first="100" step="100" last="200"/>
     <steppedValueSet variable="epsilon" first="0.1" step="0.1" last="1"/>
     <enumeratedValueSet variable="backfire">
       <value value="true"/>
