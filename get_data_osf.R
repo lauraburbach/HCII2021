@@ -9,6 +9,39 @@ if (!require(osfr)) {
   remotes::install_github("ropensci/osfr")  
 }
 
+decompress_file <- function(directory, file, .file_cache = FALSE) {
+  
+  if (.file_cache == TRUE) {
+    print("decompression skipped")
+  } else {
+    
+    # Set working directory for decompression
+    # simplifies unzip directory location behavior
+    wd <- getwd()
+    setwd(directory)
+    
+    # Run decompression
+    decompression <-
+      system2("unzip",
+              args = c("-o", # include override flag
+                       file),
+              stdout = TRUE)
+    
+    # uncomment to delete archive once decompressed
+    # file.remove(file) 
+    
+    # Reset working directory
+    setwd(wd); rm(wd)
+    
+    # Test for success criteria
+    # change the search depending on 
+    # your implementation
+    if (grepl("Warning message", tail(decompression, 1))) {
+      print(decompression)
+    }
+  }
+}    
+
 # set the OSF_PAT to your personal access token if auth is required
 # install usethis before running this code.
 # usethis::edit_r_environ() 
@@ -28,4 +61,8 @@ osf_retrieve_node("bvqnt") %>%   # retrieve the project
   osf_download("data", conflicts = "overwrite")  # download and overwrite
 
 cat("Done!")
+
+# unzip the data?
+deompress_file("data", "netlogo.zip")
+decompress_file("data", "julia.zip") # file is > 5Gb
 
