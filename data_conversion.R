@@ -1,6 +1,12 @@
 # This file loads the Netlogo Data output and puts it into a usable R Dataframe
 
 library(tidyverse)
+
+#remotes::install_github("ropensci/osfr")
+library(osfr)
+
+  
+
 noop <- function(x){x}
 
 
