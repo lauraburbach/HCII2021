@@ -1,0 +1,10 @@
+
+
+```{r}
+library(tidyverse)
+netlogo_data <- read_rds("data/netlogo_ouput.rds")
+
+skimr::skim(netlogo_data)
+
+```
+

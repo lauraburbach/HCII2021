@@ -1,7 +1,8 @@
 ---
-title: "Netlogo vs. Julia programming: The best way to simulate opinion formation"
+title: "Netlogo vs. Julia: Evaluating different options for the simulation of opinion dynamics"
 author-inputfile: "authors.tex" 
-keywords: "Simulation \\and Agent-based modells \\and Programming languages \\and Netlogo \\and Julia programming."
+abstract: |
+  Abstract goes here.
 bibliography: ["rpackages.bib", "bibliography.bib"]
 biblio-style: "apalike"
 link-citations: true
@@ -21,16 +22,16 @@ output:
 ## Global options
 library(knitr)
 #options(max.print="75")
-opts_chunk$set(echo=FALSE,
-	             cache=FALSE,
-               prompt=FALSE,
-               tidy=TRUE,
-               comment=NA,
-               message=FALSE,
-               warning=FALSE,
-               out.width='100%'
+opts_chunk$set(echo = FALSE,
+	             cache = FALSE,
+               prompt = FALSE,
+               tidy = TRUE,
+               comment = NA,
+               message = FALSE,
+               warning = FALSE,
+               out.width = '100%'
                )
-opts_knit$set(width=100)
+opts_knit$set(width = 100)
 
 # Load required libraries
 library(rmdformats)
@@ -44,13 +45,7 @@ rmdtemplates::write_bib(pkgs)
 ```
 
 
-```{r r_citations, eval=TRUE, include=TRUE, results="asis"}
-rmdtemplates::line_cite(pkgs) # This creates a single line citing all packages
-#rmdtemplates::list_cite(pkgs) # This creates a "thightlist" of all packages 
-```
 
-# Abstract
-Hallo
 
 <!--- Ca. 1/2 bis 1 Seite --->
 # Introduction
@@ -82,8 +77,11 @@ A simple way to create agent-based models is to use software toolkits developed 
 
  
 To create agent-based models, Netlogo [@Wilensky1999] is the language most commonly used. Nevertheless, there are some other programming languages that are also suitable for creating agent-based models and that seem to be partly more intuitive, at least for people with programming experience. Therefore, in this study we compare two programming languages with respect to their suitability for creating agent-based models. 
+
 ## Netlogo
+
 ## Julia
+
 ## Opinion formation/spread of information
 
 
@@ -133,6 +131,14 @@ In our study, no language turned out to be the perfect programming language for 
 <!--- Ca. 1/2 bis 1 Seite --->
 # Conclusion and outlook
 The results of our research have shown that Julia is the better choice for creating an agent-based model in some aspects, but also that Netlogo is better suited in some aspects. In the future, we plan to create more agent-based models using both programming languages, thus extending our comparison. 
+
+
+### Acknowledgements {-}
+```{r r_citations, eval=TRUE, include=TRUE, results="asis"}
+rmdtemplates::line_cite(pkgs) # This creates a single line citing all packages
+#rmdtemplates::list_cite(pkgs) # This creates a "thightlist" of all packages 
+```
+
 
 # References
 
