@@ -56,12 +56,14 @@ Hallo
 # Introduction
 When humans interact with each other or with digitized technology we speak of complex systems. The interaction of humans in such systems, for example in opinion-forming processes, leads to consequences that we cannot yet overlook or understand. An important component of socio-technical complex systems are single individuals that appear as human-in-the-loop [@Valdez2018human]. To look at the humans, their interactions and the resulting overall behavior, different simulation approaches using different programming languages are chosen.  
 
+
+
 <!--- Since the spread of the Internet, different programming languages have also evolved.
 Our world is more complex than years ago. Understanding what leads to complexity requires to consider the underlying systemic structure (Calero Valdez and Ziefle, 2018).
 --->
 <!--- Ca. 3 bis 4 Seiten --->
 # Related Work
-In this study, using Agent-based modelling we consider opinion formation processes, thus we look at a complex system. We want to know, whether it is possible tp create an Agent-based model with the programming language Netlogo and the programming language Julia. We further consider, how the two languages differ, which are the strenghths for creating Agent-based models of each programming language and which are the X. Contentwise, we built a bounded rationality model to simulate opinion formation. 
+In this study, using Agent-based modelling we consider opinion formation processes, thus we look at a complex system. We want to know, whether it is possible tp create an Agent-based model with the programming language Netlogo and the programming language Julia. We further consider, how the two languages differ, which are the strenghths for creating Agent-based models of each programming language and which are the disadvantages. Contentwise, we built a bounded rationality model to simulate opinion formation. 
 
 Therefore, we explain, which aspects lead to complexity, we introduce the method Agent-based modelling and the two programming languages Netlogo and Julia. Besides, we eplain what is knwon in theory about opinion formation or the spread of information. 
 
