@@ -82,12 +82,20 @@ To create agent-based models, Netlogo [@Wilensky1999] is the language most comm
 
 ## Julia
 
-## Opinion formation/spread of information
-
+## Opinion formation and bounded rationality
+In describing social phenomena, social scientists traditionally have tended to employ causal modeling techniques.
+That is, phenomena are explained by causally linking different variables. 
+However, when describing phenomena like opinion dynamics, the fluctuating interactions between people appear to be more significant than static variables [@Smith2007;@Vespignani2012].
+Analytical models for the process of opinion formation focus on agents and how their opinion develops over time as they interact with other agents whose opinion may be similar or different from their own.
+One main distinction between different analytical models is the way in which other agents' opinions influence one agent's own opinion, i. e., the weight which one agent puts on others' opinions.
+In the easiest case, this weight is modelled as constant, but it might also be modelled as differing dependent on the susceptibility of each agent, as dependent on time or as dependent on the disparity between two agents' opionions  [@Hegselmann2002]. This last case can be described by a so-called bounded confidence model.
+In this model, the agent will only interact with agents whose opinion is relatively close to their own [@Lorenz2007].
+To put it another way, they will only put weight on similar opinions.
+Agent-based modelling as described in chapter \Agent-based-modelling uses those analytical models to  determine agent behavior.
 
 <!--- Ca. 3 bis 4 Seiten --->
 # Method
-Using two different programming languages (Julia language and Netlogo), we created two identical agent-based models that simulate opinion formation. Since our primary aim was to find out whether agent-based models could be implemented equally well in the two programming languages, we chose the most basic model of opinion-forming: bounded rationality. 
+Using two different programming languages (Julia language and Netlogo), we created two identical agent-based models that simulate opinion formation. Since our primary aim was to find out whether agent-based models could be implemented equally well in the two programming languages, we chose the most basic model of opinion-forming: bounded rationality.
 
 In our bounded rationality model, we defined the maximum number of agents, the maximum steps of the simulation, the seed and an epsilon in the beginning. The epsilon indicates how different the opinions of two people can be, so that they still include the other person's opinion in their opinion making. We further defined from the beginning, that each agent has an (floating) opinion between 0 and 1. In each simulation step, every agent compares his opinion with the opinion of an other agent. For example, if Anna compares her opinion with Ralf and the distance between the opinion of Anna and Ralf is smaller than the defined epsilon, then the two converge in their opinions.
 
