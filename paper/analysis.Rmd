@@ -19,13 +19,16 @@ data %>% group_by(run_number, epsilon, backfire, agent_count, program) %>%
   summarise(opinion_mean = mean(list_op),
             opinion_sd = sd(list_op),
             opinion_count = length(levels(factor(list_op)))) %>% 
+  ungroup() %>% 
+  mutate(backfire = factor(backfire, labels = c("no backfire", "backfire"))) %>% 
   ggplot() +
   aes(x = factor(epsilon)) +
   aes(color = opinion_sd) +
   aes(y = opinion_count) +
   #aes(color = factor(program)) +
   geom_jitter(alpha = 0.5) +
-  facet_wrap(backfire~program)
+  facet_grid(backfire~program, scales = "free_y") +
+  theme_bw()
 
 ```
 
