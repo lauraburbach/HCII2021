@@ -1,10 +1,51 @@
 
 
-```{r}
+
+
+
+```{r read_data}
 library(tidyverse)
-netlogo_data <- read_rds("data/netlogo_ouput.rds")
 
-skimr::skim(netlogo_data)
+data <- read_rds("../data/alldata.rds")
+```
 
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("your caption"), echo=FALSE}
+knitr::include_graphics("../examples.pdf")
+```
+
+
+```{r all_runs}
+data %>% group_by(run_number, epsilon, backfire, agent_count, program) %>% 
+  summarise(opinion_mean = mean(list_op),
+            opinion_sd = sd(list_op),
+            opinion_count = length(levels(factor(list_op)))) %>% 
+  ggplot() +
+  aes(x = factor(epsilon)) +
+  aes(color = opinion_sd) +
+  aes(y = opinion_count) +
+  #aes(color = factor(program)) +
+  geom_jitter(alpha = 0.5) +
+  facet_wrap(backfire~program)
+
+```
+
+
+
+
+
+```{r}
+library(broom)
+
+
+data %>% group_by(run_number, epsilon, backfire, agent_count, program) %>% 
+  summarise(opinion_mean = mean(list_op),
+            opinion_sd = sd(list_op),
+            opinion_count = length(levels(factor(list_op)))) %>%
+  group_by(epsilon, backfire, agent_count) %>% 
+  do(tidy(t.test(opinion_sd ~ program, data = .))) %>% 
+  mutate(conf_width = abs(conf.low - conf.high )) %>% 
+  arrange(p.value) %>% head(10) %>% 
+  select(epsilon, backfire, agent_count, t = statistic, p = p.value, df = parameter ) %>% knitr::kable()
+  
 ```
 
