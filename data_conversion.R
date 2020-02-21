@@ -5,77 +5,104 @@ library(tidyverse)
 # helper terminate function
 noop <- function(x){x}
 
+
+# Parameters ----
+
 # optional parameter to limit the sorting
 limit_size <- 10
 # Where to load the data from
 input_file <- "data/BoundedRationality All-table.csv"
-
 skip_count <- 7
-step_size <- 1000
-length_dataset <- dim(read_csv(input_file, skip_empty_rows = T, skip = 6))[1]
-
-data <- data.frame(
-  X1 = c(), X2 = c(), X3 = c(), X4 = c(), X5 = c(), X6 = c(), X7 = c()
-)
-
-for (i in 0:(length_dataset/step_size)) {
-  
-  tmp <- read_csv(input_file, skip_empty_rows = T, skip = skip_count + i * step_size, n_max = step_size, col_names = FALSE)
-  
-  tmp <- tmp %>% 
-    arrange("X1", "X5") %>% 
-    noop()
-  
-  tmp %>% 
-    mutate("X6" = str_remove_all("X6", c("\\[") ) ) %>%     # remove list symbols
-    mutate("X6" = str_remove_all("X6", c("\\]") ) ) %>% 
-    rowwise() %>%                                                 # turn list into rows (help index creation)
-    mutate("X7" = paste(1:"X2", collapse = " ")) %>% 
-    separate_rows("X6", "X7", sep = " ", convert = T) %>% 
-    noop() -> tmp
-  
-  data %>%
-    bind_rows(tmp) -> data
-}
-
-names(data) <- c("run_number", "agent_count", "epsilon", "backfire", "step", "list_op", "agent")
 
 
-# ------------- #
-
-raw <- read_csv(input_file, skip_empty_rows = T, skip = 6, n_max = 10000)
-
+# Read Netlogo Data ----
+raw <- read_csv(input_file, skip_empty_rows = T, skip = 6)
 names(raw) <- c("run_number", "agent_count", "epsilon", "backfire", "step", "list_op")
 
-raw <- raw %>% 
-  arrange(run_number, step) %>% 
-  #head(limit_size) %>% 
+
+# Read Julia data ----
+raw_j <- read_csv("data/results.csv") 
+raw_j <- raw_j %>% select(run_number = seed, agent_count, epsilon, backfire, step, list_op = opinion, agent = agent_number)
+
+
+########
+
+# show single plot ----
+
+plot_run <- function(df) {
+  df %>% ggplot() +
+    aes(x = step) +
+    aes(y = list_op) +
+    aes(group = agent) +
+    geom_line(alpha = 0.1)
+}
+
+plot_run_n <- function(df, run) {
+  df %>% filter(run_number == run) %>% 
+    mutate(list_op = str_remove_all(list_op, c("\\[") ) ) %>%     # remove list symbols
+    mutate(list_op = str_remove_all(list_op, c("\\]") ) ) %>% 
+    rowwise() %>%                                                 # turn list into rows (help index creation)
+    mutate(agent = paste(1:agent_count, collapse = " ")) %>% 
+    separate_rows(list_op, agent, sep = " ", convert = T) %>% 
+    noop() %>% 
+    plot_run()
+}
+
+
+plot_run_n(raw, 5000)
+
+
+
+# Filter data to last step ----
+
+raw_f <- raw %>% 
+  filter(step == 100) %>% 
   noop()
 
-data <- raw %>% 
+raw_fj <- raw_j %>% 
+  filter(step == 100) %>%
+  noop()
+
+
+# convert netlogo
+data <- raw_f %>% 
   mutate(list_op = str_remove_all(list_op, c("\\[") ) ) %>%     # remove list symbols
   mutate(list_op = str_remove_all(list_op, c("\\]") ) ) %>% 
   rowwise() %>%                                                 # turn list into rows (help index creation)
   mutate(agent = paste(1:agent_count, collapse = " ")) %>% 
   separate_rows(list_op, agent, sep = " ", convert = T) %>% 
+  mutate(program = "NetLogo") %>% 
   noop()
 
-write_rds(data, "data/netlogo_ouput.rds", compress = "gz")
+# adapt julia
+data_j <- raw_fj %>% 
+  mutate(program = "Julia")
 
-data %>% filter(agent_count == 100, epsilon == 0.1, backfire == FALSE) %>% pull(run_number) 
+# merge data und limit random noise 
+data <- bind_rows(data_j, data) %>% 
+  mutate(list_op = round(list_op, 2))
 
-data %>% 
-  filter(agent_count == 100) %>% 
-  filter(run_number == 7) %>% 
-  filter(epsilon == 0.2) %>% 
-  filter(agent == 1) %>% 
+## Create a plot to compare ----
+
+data %>% group_by(run_number, epsilon, backfire, agent_count, program) %>% 
+  summarise(opinion_mean = mean(list_op),
+            opinion_sd = sd(list_op),
+            opinion_count = length(levels(factor(list_op)))) %>% 
   ggplot() +
-  aes(x = step, 
-      y = list_op, 
-      group = interaction(run_number, agent),
-      color = run_number
-      ) + 
-  geom_line(alpha = 0.1) + 
-  facet_grid(backfire~epsilon)
-  
-                
+  aes(x = factor(epsilon)) +
+  aes(color = opinion_sd) +
+  aes(y = opinion_count) +
+  #aes(color = factor(program)) +
+  geom_jitter(alpha = 0.5) +
+  facet_wrap(backfire~program)
+
+
+
+
+data %>% group_by(run_number, epsilon, backfire, agent_count, program) %>% 
+  summarise(opinion_mean = mean(list_op),
+            opinion_sd = sd(list_op),
+            opinion_count = length(levels(factor(list_op)))) %>%
+  group_by(epsilon, backfire, agent_count) %>% 
+  mutate(t = t.test(opinion_sd~program, data = .)$statistic)
+
