@@ -93,6 +93,12 @@ A simple way to create agent-based models is to use software toolkits developed 
 To create agent-based models, Netlogo [@Wilensky1999] is the language most commonly used. Nevertheless, there are some other programming languages that are also suitable for creating agent-based models and that seem to be partly more intuitive, at least for people with programming experience. Therefore, in this study we compare two programming languages with respect to their suitability for creating agent-based models. 
 
 ## Netlogo
+Different platforms to create agent-based models exist. NetLogo consists of a programming language, which was derived from the earlier Logo language and a set of libraries, as well as a programming environment.
+
+however NetLogoalso provides a graphical tool for quickly constructing interfaces for running agent-based models.
+
+### Interface
+An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface. 
 
 
 ## Julia
