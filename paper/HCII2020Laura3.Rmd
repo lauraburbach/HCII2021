@@ -105,7 +105,11 @@ In our bounded rationality model, we defined the maximum number of agents, the m
 We build the agent based models using either the Julia programming language or Netlogo. For the following analysis of the results we used R Markdown. 
 
 ## Netlogo
-In this study, we compared two programming languages. We used version 6.0.4 of the multi-agent programming language Netlogo, which was developed by Uri Wilensky [@Wilensky1999]. Netlogo is visually appealing because the user is provided with a user interface to create and test an agent-based model. In addition to the user interface that simplifies the initial creation of a model, Netlogo also includes a batch mode that allows the user to run any number (usually several hundred) of simulations. 
+In this study, we compared two programming languages. We used version 6.0.4 of the multi-agent programming language Netlogo, which was developed by Uri Wilensky [@Wilensky1999]. Netlogo is visually appealing because the user is provided with a user interface to create and test an agent-based model. In addition to the user interface that simplifies the initial creation of a model, Netlogo also includes a batch mode that allows the user to run any number (usually several hundred) of simulations.
+
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("your caption"), echo=FALSE}
+knitr::include_graphics("../Netlogo")
+```
 
 ## Julia
 
@@ -125,6 +129,7 @@ To find out whether both programming languages are euqually suitable to simulate
 # Results
 Following, we present some exemplarily results of our bounded rationality model. We also show, if the model created with Netlogo showed the same or different results as the model created with Julia. Based on these results, we compare the two considered programming languages and show their advantages and disadvantages.
 
+
 ## Opinion change of agents
 Following we consider, how the opinion of the agents changed during the simulation steps of the bounded rationality model with and without backfire effect. At this point we do not distinguish between the two programming languages used. 
 
@@ -132,12 +137,27 @@ Following we consider, how the opinion of the agents changed during the simulati
 
 ```
 
+We use four examples (see Figure 1) to illustrate how the agents change their opinion during the simulation and how different the opinions look at the end of the simulation. As can be seen at the top left of Figure 1, one possible outcome is that the opinions of the agents diverge completely and only two extreme opinions are formed. After less than 15 simulation steps, every agent has either opinion 0.00 or opinion 1.00. In this example, the epsilon is low and the backfire effect takes place. 
+
+In comparison to this example, in the third example (bottom left) no backfire effect takes place. In both examples, the epsilon is 0.1. Comparing the two examples, it becomes clear that the backfire effect increases the divergence of opinions. While in the first example two clear opinions quickly establish, in the third example there are more different opinions for a longer time. After 20 simulation steps, two groups of agents form whose opinions are similar to each other. Nevertheless, even after 30 simulation steps, these agents still have similar opinions but not one uniform opinion. 
+
+In example 4 (bottom right), also no backfire takes place. Here the different opinions converge to a consensus of opinion. After around 20 simulation steps each agent has the opinion 0.5. 
+
+In contrast, in example 2 (top right) no majority opinion develops, but several groups with the same opinions form. In this example, the epsilon is higher than in the other examples, which leads the agents to accept opinions that differ more from their own than in the other examples. 
+ 
+## Influence of programming language, epsilon and backfire on opinion count
+After we looked at the opinion formation of the agents itself, we now consider, whether the epsilon, if the backfire effect takes place or not and the programming language has an influence on the existence of different opinions. To look at the influence of the enumerated factors, we consider (see Figure 2) how many different opinions exist (y-axis). We further consider the standard deviations of the opinions (color) to analyse how different the opinions are.
+
+As Figure 2 shows, if the epsilon is higher than 0.55, practically all agents have only one opinion (sd = 0.0), regardless of whether the backfire effect takes place or not and which programming language is used. When the epsilon is lower than 0.55 and the backfire effect takes place, there are two opinions among the agents that diverge to the two extremes of opinion (sd = 0.5). In comparison, when the epsilon is lower than 0.55 and no backfire effect takes place, the agents have more different opinions, but the standard deviations of the opinions are lower (less bright) than in the simulations with backfire effect. The lower the epsilon is, the higher is the amount of opinions. Comparing the two programming languages, the amount of different opinions is a bit higher when NetLogo is used, but the difference is small. Overall, the two programming languages showed almost the same qualitative results. As Table 1 shows, the quantitative comarison of both languages showed, that except of three simulation runs, the t.test wasn´t significant. Thus the languages showed the same results.
+
 ## Comparison of Julia and Netlogo
 When comparing both programming languages to create an agent-based model that simulates the bounded rationality model, Julia  proved to be a faster language less code lines were required to simulare our model. In addition, Julia turned out to be easier to learn for people with previous programming skills. In contrast, Netlogo proved to be a language that is easier to learn for people without programming skills.
 
 <!--- Ca. 1 Seite --->
 # Discussion
 In our study, no language turned out to be the perfect programming language for creating agent-based models, but the choice of language seems to be a trade-off between various advantages and disadvantages. Of course, we have only focused on one very simple bounded rationality model, so that we would have to create further simulations with both languages to be able to make statements about the generality. 
+
+
 
 <!--- Ca. 1/2 bis 1 Seite --->
 # Conclusion and outlook
