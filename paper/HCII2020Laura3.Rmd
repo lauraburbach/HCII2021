@@ -1,7 +1,8 @@
 ---
-title: "Netlogo vs. Julia programming: The best way to simulate opinion formation"
+title: "Netlogo vs. Julia: Evaluating different options for the simulation of opinion dynamics"
 author-inputfile: "authors.tex" 
-keywords: "Simulation \\and Agent-based modells \\and Programming languages \\and Netlogo \\and Julia programming."
+abstract: |
+  Abstract goes here.
 bibliography: ["rpackages.bib", "bibliography.bib"]
 biblio-style: "apalike"
 link-citations: true
@@ -21,16 +22,16 @@ output:
 ## Global options
 library(knitr)
 #options(max.print="75")
-opts_chunk$set(echo=FALSE,
-	             cache=FALSE,
-               prompt=FALSE,
-               tidy=TRUE,
-               comment=NA,
-               message=FALSE,
-               warning=FALSE,
-               out.width='100%'
+opts_chunk$set(echo = FALSE,
+	             cache = FALSE,
+               prompt = FALSE,
+               tidy = TRUE,
+               comment = NA,
+               message = FALSE,
+               warning = FALSE,
+               out.width = '100%'
                )
-opts_knit$set(width=100)
+opts_knit$set(width = 100)
 
 # Load required libraries
 library(rmdformats)
@@ -44,13 +45,7 @@ rmdtemplates::write_bib(pkgs)
 ```
 
 
-```{r r_citations, eval=TRUE, include=TRUE, results="asis"}
-rmdtemplates::line_cite(pkgs) # This creates a single line citing all packages
-#rmdtemplates::list_cite(pkgs) # This creates a "thightlist" of all packages 
-```
 
-# Abstract
-Hallo
 
 <!--- Ca. 1/2 bis 1 Seite --->
 # Introduction
@@ -84,14 +79,25 @@ A simple way to create agent-based models is to use software toolkits developed 
 
  
 To create agent-based models, Netlogo [@Wilensky1999] is the language most commonly used. Nevertheless, there are some other programming languages that are also suitable for creating agent-based models and that seem to be partly more intuitive, at least for people with programming experience. Therefore, in this study we compare two programming languages with respect to their suitability for creating agent-based models. 
-## Netlogo
-## Julia
-## Opinion formation/spread of information
 
+## Netlogo
+
+## Julia
+
+## Opinion formation and bounded rationality
+In describing social phenomena, social scientists traditionally have tended to employ causal modeling techniques.
+That is, phenomena are explained by causally linking different variables. 
+However, when describing phenomena like opinion dynamics, the fluctuating interactions between people appear to be more significant than static variables [@Smith2007;@Vespignani2012].
+Analytical models for the process of opinion formation focus on agents and how their opinion develops over time as they interact with other agents whose opinion may be similar or different from their own.
+One main distinction between different analytical models is the way in which other agents' opinions influence one agent's own opinion, i. e., the weight which one agent puts on others' opinions.
+In the easiest case, this weight is modelled as constant, but it might also be modelled as differing dependent on the susceptibility of each agent, as dependent on time or as dependent on the disparity between two agents' opionions  [@Hegselmann2002]. This last case can be described by a so-called bounded confidence model.
+In this model, the agent will only interact with agents whose opinion is relatively close to their own [@Lorenz2007].
+To put it another way, they will only put weight on similar opinions.
+Agent-based modelling as described in chapter \Agent-based-modelling uses those analytical models to  determine agent behavior.
 
 <!--- Ca. 3 bis 4 Seiten --->
 # Method
-Using two different programming languages (Julia language and Netlogo), we created two identical agent-based models that simulate opinion formation. Since our primary aim was to find out whether agent-based models could be implemented equally well in the two programming languages, we chose the most basic model of opinion-forming: bounded rationality. 
+Using two different programming languages (Julia language and Netlogo), we created two identical agent-based models that simulate opinion formation. Since our primary aim was to find out whether agent-based models could be implemented equally well in the two programming languages, we chose the most basic model of opinion-forming: bounded rationality.
 
 In our bounded rationality model, we defined the maximum number of agents, the maximum steps of the simulation, the seed and an epsilon in the beginning. The epsilon indicates how different the opinions of two people can be, so that they still include the other person's opinion in their opinion making. We further defined from the beginning, that each agent has an (floating) opinion between 0 and 1. In each simulation step, every agent compares his opinion with the opinion of an other agent. For example, if Anna compares her opinion with Ralf and the distance between the opinion of Anna and Ralf is smaller than the defined epsilon, then the two converge in their opinions.
 
@@ -118,7 +124,7 @@ To find out whether both programming languages are euqually suitable to simulate
 # Results
 Following, we first present the outcome of the bounded rationality model created with julia. Afterwards we show, if the model created with Netlogo showed the same or different results. Based on these results, we compare the two considered programming languages and show their advantages and disadvantages.
 
-```{r results,child='analysis.Rmd', eval=FALSE}
+```{r results,child='analysis.Rmd', eval=TRUE}
 
 ```
 
@@ -135,6 +141,14 @@ In our study, no language turned out to be the perfect programming language for 
 <!--- Ca. 1/2 bis 1 Seite --->
 # Conclusion and outlook
 The results of our research have shown that Julia is the better choice for creating an agent-based model in some aspects, but also that Netlogo is better suited in some aspects. In the future, we plan to create more agent-based models using both programming languages, thus extending our comparison. 
+
+
+### Acknowledgements {-}
+```{r r_citations, eval=TRUE, include=TRUE, results="asis"}
+rmdtemplates::line_cite(pkgs) # This creates a single line citing all packages
+#rmdtemplates::list_cite(pkgs) # This creates a "thightlist" of all packages 
+```
+
 
 # References
 
