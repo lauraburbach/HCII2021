@@ -123,10 +123,13 @@ To find out whether both programming languages are euqually suitable to simulate
 
 <!--- Ca. 4 bis 5 Seiten --->
 # Results
-Following, we present some exemplarily results of our italic(bounded rationality model). We also show, if the model created with Netlogo showed the same or different results as the model created with Julia. Based on these results, we compare the two considered programming languages and show their advantages and disadvantages.
+Following, we present some exemplarily results of our bounded rationality model. We also show, if the model created with Netlogo showed the same or different results as the model created with Julia. Based on these results, we compare the two considered programming languages and show their advantages and disadvantages.
 
 ## Opinion change of agents
 Following we consider, how the opinion of the agents changed during the simulation steps of the bounded rationality model with and without backfire effect. At this point we do not distinguish between the two programming languages used. 
+
+We use four examples (see Figure 1) to illustrate how the agents change their opinion during the simulation and how different the opinions look at the end of the simulation. As can be seen at the top left of Figure 1, one possible outcome is that the opinions of the agents diverge completely and only two extreme opinions are formed. After less than 15 simulation steps, every agent has either opinion 0.00 or opinion 1.00. In this example, the epsilon is low and the backfire effect takes place. 
+ 
 
 ```{r results,child='analysis.Rmd', eval=TRUE}
 
