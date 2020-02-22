@@ -98,8 +98,13 @@ Different platforms to create agent-based models exist. NetLogo consists of a pr
 however NetLogoalso provides a graphical tool for quickly constructing interfaces for running agent-based models.
 
 ### Interface
-An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface. 
+An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface. Figure 1 shows the Interface of our simulation. 
 
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Interface of Netlogo"), echo=FALSE}
+knitr::include_graphics("../Netlogo.png")
+```
+
+The interface shows a spatial 2D view of the model environment. For Netlogo, this environment is a square grid (there are other platforms that support hexahonal grids, such as Mason and Repast). The Netlogo user can add further elements to this view. These include buttons for setting the model parameters and diagrams that can be used to monitor the results. The added elements can be moved anywhere on the interface. 
 
 ## Julia
 
@@ -126,9 +131,7 @@ In our bounded rationality model, we defined the maximum number of agents, the m
 ## Netlogo
 In this study, we compared two programming languages. We used version 6.0.4 of the multi-agent programming language Netlogo, which was developed by Uri Wilensky [@Wilensky1999]. Netlogo is visually appealing because the user is provided with a user interface to create and test an agent-based model. In addition to the user interface that simplifies the initial creation of a model, Netlogo also includes a batch mode that allows the user to run any number (usually several hundred) of simulations.
 
-```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Interface of Netlogo"), echo=FALSE}
-knitr::include_graphics("../Netlogo.png")
-```
+
 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Behavior Space in Netlogo"), echo=FALSE}
 knitr::include_graphics("../BehaviorSpace2.png")
