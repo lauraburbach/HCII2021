@@ -2,7 +2,7 @@
 title: "Netlogo vs. Julia: Evaluating different options for the simulation of opinion dynamics"
 author-inputfile: "authors.tex" 
 abstract: |
-  Abstract goes here.
+  Analysing complex phenomena, such as the world we live in, or complex interactions, also requires methods that are suitable for considering both the individual aspects of these phenomena and the resulting overall system. As a method well suited for the consideration of complex phenomena, we consider agent-based models in this study. Using two programming languages (Netlogo and Julia) we simulate a simple bounded-rationality opinion formation model with and without backfire effect. We analyzed, which of the languages is better for the creation of agent-based models and found, that both languages have some advantages for the creation of simulations. While Julia is much faster in simulating a model, Netlogo has a nice Interface and is more intutitive to use for non-computer scientists. Thus the choice of the programming language remains always a trade-off and in future more complex models should be considered using both programming languages. 
 bibliography: ["rpackages.bib", "bibliography.bib"]
 biblio-style: "apalike"
 link-citations: true
@@ -107,8 +107,8 @@ We build the agent based models using either the Julia programming language or N
 ## Netlogo
 In this study, we compared two programming languages. We used version 6.0.4 of the multi-agent programming language Netlogo, which was developed by Uri Wilensky [@Wilensky1999]. Netlogo is visually appealing because the user is provided with a user interface to create and test an agent-based model. In addition to the user interface that simplifies the initial creation of a model, Netlogo also includes a batch mode that allows the user to run any number (usually several hundred) of simulations.
 
-```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("your caption"), echo=FALSE}
-knitr::include_graphics("../Netlogo")
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Interface of Netlogo"), echo=FALSE}
+knitr::include_graphics("../Netlogo.png")
 ```
 
 ## Julia
