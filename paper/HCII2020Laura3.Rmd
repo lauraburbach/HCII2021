@@ -123,7 +123,10 @@ To find out whether both programming languages are euqually suitable to simulate
 
 <!--- Ca. 4 bis 5 Seiten --->
 # Results
-Following, we first present the outcome of the bounded rationality model created with julia. Afterwards we show, if the model created with Netlogo showed the same or different results. Based on these results, we compare the two considered programming languages and show their advantages and disadvantages.
+Following, we present some exemplarily results of our italic(bounded rationality model). We also show, if the model created with Netlogo showed the same or different results as the model created with Julia. Based on these results, we compare the two considered programming languages and show their advantages and disadvantages.
+
+## Opinion change of agents
+Following we consider, how the opinion of the agents changed during the simulation steps of the bounded rationality model with and without backfire effect. At this point we do not distinguish between the two programming languages used. 
 
 ```{r results,child='analysis.Rmd', eval=TRUE}
 
