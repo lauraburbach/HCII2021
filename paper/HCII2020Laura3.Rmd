@@ -131,6 +131,11 @@ Using two different programming languages (Netlogo and Julia language), we creat
 To built the agent based models, we used either the Julia programming language or Netlogo. For Julia we used the Atom editor. We used version 6.0.4 of the multi-agent programming language Netlogo, which was developed by Uri Wilensky [@Wilensky1999]. For the following analysis of the results we used R Markdown. 
 
 ## Basics of Agent-based models 
+An agent-based model usually contains a setup and a go procedure. The setup procedure defines a kind of basic state at the beginning of the simulation. The go procedure then specifies what happens in a single step of the simulation. 
+
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("setup procedure in Netlogo"), echo=FALSE}
+knitr::include_graphics("../setup1.png")
+```
 
 ## Before the model starts
 In our bounded rationality model, we defined the maximum number of agents, the maximum steps of the simulation, the seed, an epsilon and whether a backfire effect takes place or not in the beginning. The epsilon indicates how different the opinions of two people can be, so that they still include the other person's opinion in their opinion making. We further defined from the beginning, that each agent has an (floating) opinion between 0 and 1. In each simulation step, every agent compares his opinion with the opinion of an other agent. For example, if Anna compares her opinion with Ralf and the distance between the opinion of Anna and Ralf is smaller than the defined epsilon, then the two converge in their opinions. Additionally we defined in the beginning, whether an backfire effect takes place or not. 
@@ -155,7 +160,7 @@ knitr::include_graphics("../BehaviorSpace2.png")
 
 
 ## Go procedure 
-Here we compare the go procedure 
+Here we compare the go-procedure 
 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in julia"), echo=FALSE}
 knitr::include_graphics("../Go_julia.png")
