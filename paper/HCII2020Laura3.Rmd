@@ -62,9 +62,6 @@ Besides Netlogo, there are also other languages that can be used to create agent
 
 So far, it has not been considered which language is actually best suited for creating agent-based models. Therefore, in this study we investigate whether Netlogo or Julia is better suited for creating agent-based models. 
 
-<!--- Since the spread of the Internet, different programming languages have also evolved.
-Our world is more complex than years ago. Understanding what leads to complexity requires to consider the underlying systemic structure (Calero Valdez and Ziefle, 2018).
---->
 <!--- Ca. 3 bis 4 Seiten --->
 # Related Work
 In this study, using Agent-based modelling we consider opinion formation processes, thus we look at a complex system. We want to know, whether it is possible tp create an Agent-based model with the programming language Netlogo and the programming language Julia. We further consider, how the two languages differ, which are the strenghths for creating Agent-based models of each programming language and which are the disadvantages. Contentwise, we built a bounded rationality model to simulate opinion formation. 
@@ -75,11 +72,12 @@ Therefore, we explain, which aspects lead to complexity, we introduce the method
 When examining opinion-forming processes, we look at a complex system. Such complex systems can be divided into several ontological levels or interacting subsystems on a micro- or macro-level [@Conte2012] We first have to look at how systems are structurally designed in order to deduce what leads to complexity [@Valdez2018human]. Further, complex systems lead to emergent phenomena. These complex systems and emergent phenomena are difficult to understand, because while it is easy to observe the individual system components, the resulting overall system cannot be considered as the sum of its parts. Instead, understanding the system behavior requires more than understanding the individual parts of the system [@Valdez2018human].  
 
 ### Complex vs. complicated
-When we look at complex systems, we do not necessarily mean complicated systems. A system consisting of components can initially be both complicated and complex. However, while the term complicated is always related to human understanding, the term complex is not necessarily so. If something is complicated, such as a mathematical differential equation, this means that it is difficult for us humans to understand. To be complex at the same time, the equation would have to contain many small parts. However, it is also possible that an equation consists of few parts and is therefore not complex, but is nevertheless complicated to understand. The two terms therefore both refer to a system consisting of components, but mean different aspects of the system and a system which is complicated does not necessarily have to be complex system and vice versa. A complex system consists of many sub-components, whose interactions make it difficult to predict the behaviour of the system. The number of components as well as the complicated interactions of the parts are considered complex [@Waldorp1992, @Byrne1999]. Another characteristic of complex systems, which is particularly important for our study, is that complex systems are always dynamic. If a system consists of many parts, but does not show dynamics but remains static, it is never complex. It is easy to investigate it comprehensively [@Valdez2018human].
+When we look at complex systems, we do not necessarily mean complicated systems. A system consisting of components can initially be both complicated and complex. However, while the term complicated is always related to human understanding, the term complex is not necessarily so. If something is complicated, such as a mathematical differential equation, this means that it is difficult for us humans to understand. To be complex at the same time, the equation would have to contain many small parts. However, it is also possible that an equation consists of few parts and is therefore not complex, but is nevertheless complicated to understand. The two terms therefore both refer to a system consisting of components, but mean different aspects of the system and a system which is complicated does not necessarily have to be complex system and vice versa. A complex system consists of many sub-components, whose interactions make it difficult to predict the behaviour of the system. The number of components as well as the complicated interactions of the parts are considered complex [@Waldorp1992],  [@Byrne1999]. Another characteristic of complex systems, which is particularly important for our study, is that complex systems are always dynamic. If a system consists of many parts, but does not show dynamics but remains static, it is never complex. It is easy to investigate it comprehensively [@Valdez2018human].
 
 ### Emergence
-
 Typically, we look at individual components of a system. From these subcomponents we then often infer the behavior of the overall system. However, as Aristotle said, the whole is more than the sum of its parts, and it is therefore not really correct to observe only the components and conclude on the overall behavior. However, it is problematic that we can usually observe and understand individual components or individual behavior, but the overall behavior is often more difficult to observe. If the interaction of the individual components results in a system that cannot be described by the sum of the individual components, we speak of emergence.
+<!--- Hier könnte ich z.B. noch Vogelschwarm-Beispiel bringen
+--->
 
 ## Agent-based modelling
 To analyse complex systems we need a suitable approach, such as simulations, which enable to model the individual parts of a system and thus make the overall behavior visible. For the simulation of complex systems, Agent-based models are very well suited [@Epstein2007]. 
@@ -96,6 +94,7 @@ To create agent-based models, Netlogo [@Wilensky1999] is the language most comm
 
 ## Netlogo
 
+
 ## Julia
 
 ## Opinion formation and bounded rationality
@@ -111,11 +110,12 @@ Agent-based modelling as described in chapter Agent-based-modelling uses those a
 
 <!--- Ca. 3 bis 4 Seiten --->
 # Method
-Using two different programming languages (Julia language and Netlogo), we created two identical agent-based models that simulate opinion formation. Since our primary aim was to find out whether agent-based models could be implemented equally well in the two programming languages, we chose the most basic model of opinion-forming: bounded rationality.
-
-In our bounded rationality model, we defined the maximum number of agents, the maximum steps of the simulation, the seed and an epsilon in the beginning. The epsilon indicates how different the opinions of two people can be, so that they still include the other person's opinion in their opinion making. We further defined from the beginning, that each agent has an (floating) opinion between 0 and 1. In each simulation step, every agent compares his opinion with the opinion of an other agent. For example, if Anna compares her opinion with Ralf and the distance between the opinion of Anna and Ralf is smaller than the defined epsilon, then the two converge in their opinions.
+Using two different programming languages (Netlogo and Julia language), we created two identical agent-based models that simulate opinion formation. Since our primary aim was to find out whether agent-based models could be implemented equally well in the two programming languages, we chose the most basic model of opinion-forming: bounded rationality.
 
 We build the agent based models using either the Julia programming language or Netlogo. For the following analysis of the results we used R Markdown. 
+
+## Before the model starts
+In our bounded rationality model, we defined the maximum number of agents, the maximum steps of the simulation, the seed, an epsilon and whether a backfire effect takes place or not in the beginning. The epsilon indicates how different the opinions of two people can be, so that they still include the other person's opinion in their opinion making. We further defined from the beginning, that each agent has an (floating) opinion between 0 and 1. In each simulation step, every agent compares his opinion with the opinion of an other agent. For example, if Anna compares her opinion with Ralf and the distance between the opinion of Anna and Ralf is smaller than the defined epsilon, then the two converge in their opinions. Additionally we defined in the beginning, whether an backfire effect takes place or not. 
 
 ## Netlogo
 In this study, we compared two programming languages. We used version 6.0.4 of the multi-agent programming language Netlogo, which was developed by Uri Wilensky [@Wilensky1999]. Netlogo is visually appealing because the user is provided with a user interface to create and test an agent-based model. In addition to the user interface that simplifies the initial creation of a model, Netlogo also includes a batch mode that allows the user to run any number (usually several hundred) of simulations.
@@ -124,7 +124,29 @@ In this study, we compared two programming languages. We used version 6.0.4 of t
 knitr::include_graphics("../Netlogo.png")
 ```
 
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Behavior Space in Netlogo"), echo=FALSE}
+knitr::include_graphics("../BehaviorSpace2.png")
+```
+
+
+
 ## Julia
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("main procedure in julia"), echo=FALSE}
+knitr::include_graphics("../main_julia.png")
+```
+
+
+
+## Go procedure 
+
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in julia"), echo=FALSE}
+knitr::include_graphics("../Go_julia.png")
+```
+
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in Netlogo"), echo=FALSE}
+knitr::include_graphics("../Go_Netlogo.png")
+```
+
 
 ## Bounded rationality model
 Since our primary goal was to compare the two programming languages with each other, we designed the parameters of the Netlogo model and the Julia model the identical way. Thus, we increased the comparability of the results of both models and reduced the complexity as much as possible. Table Y shows the settings, that we determined from the beginning of the model.   
@@ -133,7 +155,7 @@ Since our primary goal was to compare the two programming languages with each ot
 
 ### Network
 
-## Before the model starts
+
 
 ## What do we compare
 To find out whether both programming languages are euqually suitable to simulate our bounded rationality model, we look at severeal measurable criteria. These criteria include the outcomes and performance of both models. They further include how many lines of code are necessary to program the simulation. Another aspect, that we take into consideration, is, if learning Julia and Netlogo is equally difficult. For this aspect we consider both computer scientists who are familiar with other programming languages and a person who has no previous experience with programming languages. We further compare the explorability and scalability of both languages.
