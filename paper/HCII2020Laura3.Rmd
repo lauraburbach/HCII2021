@@ -37,6 +37,7 @@ opts_knit$set(width = 100)
 library(rmdformats)
 library(tidyverse)
 library(cowplot)
+library(tinytex)
 # add libraries here
 
 # Add libraries to cite here:
@@ -93,7 +94,7 @@ One main distinction between different analytical models is the way in which oth
 In the easiest case, this weight is modelled as constant, but it might also be modelled as differing dependent on the susceptibility of each agent, as dependent on time or as dependent on the disparity between two agents' opionions  [@Hegselmann2002]. This last case can be described by a so-called bounded confidence model.
 In this model, the agent will only interact with agents whose opinion is relatively close to their own [@Lorenz2007].
 To put it another way, they will only put weight on similar opinions.
-Agent-based modelling as described in chapter \Agent-based-modelling uses those analytical models to  determine agent behavior.
+Agent-based modelling as described in chapter Agent-based-modelling uses those analytical models to  determine agent behavior.
 
 <!--- Ca. 3 bis 4 Seiten --->
 # Method
