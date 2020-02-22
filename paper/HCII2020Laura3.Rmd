@@ -129,6 +129,8 @@ Following, we present some exemplarily results of our bounded rationality model.
 Following we consider, how the opinion of the agents changed during the simulation steps of the bounded rationality model with and without backfire effect. At this point we do not distinguish between the two programming languages used. 
 
 We use four examples (see Figure 1) to illustrate how the agents change their opinion during the simulation and how different the opinions look at the end of the simulation. As can be seen at the top left of Figure 1, one possible outcome is that the opinions of the agents diverge completely and only two extreme opinions are formed. After less than 15 simulation steps, every agent has either opinion 0.00 or opinion 1.00. In this example, the epsilon is low and the backfire effect takes place. 
+
+In comparison to this example, in the third example (bottom left) no backfire effect takes place. In both examples, the epsilon is 0.1. Comparing the two examples, it becomes clear that the backfire effect increases the divergence of opinions. While in the first example two clear opinions quickly establish, in the third example there are more different opinions for a longer time. After 20 simulation steps, two groups of agents form whose opinions are similar to each other. Nevertheless, even after 30 simulation steps, these agents still have similar opinions but not one uniform opinion.  
  
 
 ```{r results,child='analysis.Rmd', eval=TRUE}
