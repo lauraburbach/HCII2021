@@ -218,17 +218,23 @@ As Figure 2 shows, if the epsilon is higher than 0.55, practically all agents ha
 ## Comparison of Julia and Netlogo
 When comparing both programming languages to create an agent-based model that simulates the bounded rationality model, Julia  proved to be a faster language. The whole simulaton took only 82.23 seconds, whereas the Netlogo simulation took 36 minutes. While the model calculation in Julia is much faster, Netlogo required less than half the lines of code. To write the bounded rationality model in Julia 97 lines of code were necessary, in Netlogo only 44 lines of code were necessary.
 
-When we consider how difficult it is to learn the two programming languages, we also have to take into account the previous knowledge of the users. Thus Netlogo proved to be a language that is easier to learn for people without programming skills.. In contrast, people with previous programming skills reported, that it is easier to learn Julia, because it is more similar to other already used programming languages (for example Python). 
+When we consider how difficult it is to learn the two programming languages, we also have to take into account the previous knowledge of the users. Thus Netlogo proved to be a language that is easier to learn for people without programming skills. In contrast, people with previous programming skills reported, that it is easier to learn Julia, because it is more similar to other already used programming languages (for example Python). 
+
+The fact that Netlogo is easier to learn for people without previous programming experience is partly due to the fact that the platform's interface makes it easier to get started with the programming language. The interface offers the user direct feedback, as the simulation runs visibly if he has written the code correctly and also immediately reports back error messages if the code is wrong. In addition, the interface allows the user to try out and change various things in the process. 
+
+Also, the fact that there is already a large library of existing agent-based models in Netlogo, since the language is used exclusively for this method, makes it easier to use, since existing models can be built upon or users can orient themselves on them. 
+
+In addition to the interface, the Logo programming language, which Netlogo uses, is also easy to use because there is only a manageable number of structurally different commands and users can quickly get a feel for which procedures and functions always need to be set when creating agent-based models.  
 
 <!--- Ca. 1 Seite --->
 # Discussion
 In our study, no language turned out to be the perfect programming language for creating agent-based models, but the choice of language seems to be a trade-off between various advantages and disadvantages and also between different potential users and use cases. 
 
-For people who have never used a programming language before and are not supported by people with previous programming experience, the introduction to the Netlogo language is certainly easier than to the Julia language. 
+For people who have never used a programming language before and are not supported by people with previous programming experience, the entrance to the Netlogo language is certainly easier than to the Julia language. Likewise, starting with Julia is easier for people with programming experience, because they already know, how the language is probably organized. 
+
+One other aspect, that could be taken into account, is the time, that is needed to run the simulation. Here Julia turned out to be much faster. But, in many research areas or for many research questions it does not really matter, whether the language is really fast. One aspect, that is probably more important is, that very big simulations in Netlogo require high computing power and that the computers sometimes crash, making it impossible to calculate the model In this case Julia makes it possible to calculate the simulation without any problems. 
 
 Of course, we have only focused on one very simple bounded rationality model, so that we would have to create further simulations with both languages to be able to make statements about the generality. 
-
-
 
 <!--- Ca. 1/2 bis 1 Seite --->
 # Conclusion and outlook
