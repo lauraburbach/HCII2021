@@ -133,9 +133,9 @@ To built the agent based models, we used either the Julia programming language o
 ## Basics of Agent-based models 
 An agent-based model usually contains a setup and a go procedure. The "setup" procedure defines a kind of basic state at the beginning of the simulation. The "go" procedure then specifies what happens in a single step of the simulation. 
 
-In Netloho the "setup" procedure usually looks like in Figure X. In Netlogo, procedures always start with "to" and end with "end". Clear-all makes the world go back to its initial, empty state. For example, if colors were assigned to the spots where the agents are located, they will now turn black again. Create-turtles creates the specified number of turtles, here 100. The turtles usually start at the origin, i.e. in the middle of patch 0.0. The code in the square brackets after create-turtles here indicates that the turtles start at a random x and y coordinate. The square brackets could also be used to create other commands for the agents. Reset-ticks makes sure that the tick counter starts. 
+In Netlogo the "setup" procedure usually looks like in Figure X. In Netlogo, procedures always start with "to" and end with "end". Clear-all makes the world go back to its initial, empty state. For example, if colors were assigned to the spots where the agents are located, they will now turn black again. Create-turtles creates the specified number of turtles, here 100. The turtles usually start at the origin, i.e. in the middle of patch 0.0. The code in the square brackets after create-turtles here indicates that the turtles start at a random x and y coordinate. The square brackets could also be used to create other commands for the agents. Reset-ticks makes sure that the tick counter starts. Once this code is created, the simulation starts in the interface by clicking the "Setup" button. 
 
-```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c(""setup" procedure in Netlogo"), echo=FALSE}
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("setup procedure in Netlogo"), echo=FALSE}
 knitr::include_graphics("../setup11.png")
 ```
 
@@ -162,7 +162,7 @@ knitr::include_graphics("../BehaviorSpace2.png")
 
 
 ## Go procedure 
-Here we compare the go-procedure 
+Here we compare the "go" procedures of Netlogo and Julia. Both codes look similar. In Netlogo (see Figure X), the procedure starts by adressing the agents (ask turtles)
 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in julia"), echo=FALSE}
 knitr::include_graphics("../Go_julia.png")
@@ -216,18 +216,25 @@ After we looked at the opinion formation of the agents itself, we now consider, 
 As Figure 2 shows, if the epsilon is higher than 0.55, practically all agents have only one opinion (sd = 0.0), regardless of whether the backfire effect takes place or not and which programming language is used. When the epsilon is lower than 0.55 and the backfire effect takes place, there are two opinions among the agents that diverge to the two extremes of opinion (sd = 0.5). In comparison, when the epsilon is lower than 0.55 and no backfire effect takes place, the agents have more different opinions, but the standard deviations of the opinions are lower (less bright) than in the simulations with backfire effect. The lower the epsilon is, the higher is the amount of opinions. Comparing the two programming languages, the amount of different opinions is a bit higher when NetLogo is used, but the difference is small. Overall, the two programming languages showed almost the same qualitative results. As Table 1 shows, the quantitative comarison of both languages showed, that except of three simulation runs, the t.test wasn´t significant. Thus the languages showed the same results.
 
 ## Comparison of Julia and Netlogo
-When comparing both programming languages to create an agent-based model that simulates the bounded rationality model, Julia  proved to be a faster language less code lines were required to simulare our model. In addition, Julia turned out to be easier to learn for people with previous programming skills. In contrast, Netlogo proved to be a language that is easier to learn for people without programming skills.
+When comparing both programming languages to create an agent-based model that simulates the bounded rationality model, Julia  proved to be a faster language. The whole simulaton took only 82.23 seconds, whereas the Netlogo simulation took 36 minutes. While the model calculation in Julia is much faster, Netlogo required less than half the lines of code. To write the bounded rationality model in Julia 97 lines of code were necessary, in Netlogo only 44 lines of code were necessary.
+
+When we consider how difficult it is to learn the two programming languages, we also have to take into account the previous knowledge of the users. Thus Netlogo proved to be a language that is easier to learn for people without programming skills.. In contrast, people with previous programming skills reported, that it is easier to learn Julia, because it is more similar to other already used programming languages (for example Python). 
 
 <!--- Ca. 1 Seite --->
 # Discussion
-In our study, no language turned out to be the perfect programming language for creating agent-based models, but the choice of language seems to be a trade-off between various advantages and disadvantages. Of course, we have only focused on one very simple bounded rationality model, so that we would have to create further simulations with both languages to be able to make statements about the generality. 
+In our study, no language turned out to be the perfect programming language for creating agent-based models, but the choice of language seems to be a trade-off between various advantages and disadvantages and also between different potential users and use cases. 
+
+For people who have never used a programming language before and are not supported by people with previous programming experience, the introduction to the Netlogo language is certainly easier than to the Julia language. 
+
+Of course, we have only focused on one very simple bounded rationality model, so that we would have to create further simulations with both languages to be able to make statements about the generality. 
 
 
 
 <!--- Ca. 1/2 bis 1 Seite --->
 # Conclusion and outlook
-The results of our research have shown that Julia is the better choice for creating an agent-based model in some aspects, but also that Netlogo is better suited in some aspects. In the future, we plan to create more agent-based models using both programming languages, thus extending our comparison. 
+The results of our research have shown that, although Netlogo is established for a longer time, both programming languages are well-suited to create agent-based models. Comparing the two languages, we could not find one perfect language, but each laguage is the better choice for creating an agent-based model in some aspects. The decision for a programming language depends on different trade-offs (previous experience vs. support; time to create the model vs. time used for simulation run; nice Interface vs. higher functionality). In the end, however, it does not make sense to decide in favor of one language against the other, but to take advantage of both languages and thus use Netlogo for prototyping and Julia for large simulations based on it. 
 
+With this study we compared Julia and Netlogo to create a very simple bounded rationality model. In the future we would like to extend this comparison by using both languages for more complex simulations. We further plan to pursue with studies, that combine both languages. 
 
 ### Acknowledgements {-}
 This research was supported by the Digital Society research program funded by the Ministry of Culture and Science of the German State of North Rhine-Westphalia.
