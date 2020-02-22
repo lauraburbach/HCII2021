@@ -133,7 +133,7 @@ To built the agent based models, we used either the Julia programming language o
 ## Basics of Agent-based models 
 An agent-based model usually contains a setup and a go procedure. The "setup" procedure defines a kind of basic state at the beginning of the simulation. The "go" procedure then specifies what happens in a single step of the simulation. 
 
-In Netloho the "setup" procedure usually looks like in Figure X. 
+In Netloho the "setup" procedure usually looks like in Figure X. In Netlogo, procedures always start with "to" and end with "end". Clear-all makes the world go back to its initial, empty state. For example, if colors were assigned to the spots where the agents are located, they will now turn black again. Create-turtles creates the specified number of turtles, here 100. The turtles usually start at the origin, i.e. in the middle of patch 0.0. The code in the square brackets after create-turtles here indicates that the turtles start at a random x and y coordinate. The square brackets could also be used to create other commands for the agents. Reset-ticks makes sure that the tick counter starts. 
 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c(""setup" procedure in Netlogo"), echo=FALSE}
 knitr::include_graphics("../setup11.png")
