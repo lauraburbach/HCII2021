@@ -116,7 +116,7 @@ Julia was initially introduced by a group of computer scientists and mathematici
 ## Opinion formation and bounded rationality
 In describing social phenomena, social scientists traditionally have tended to employ causal modeling techniques.
 That is, phenomena are explained by causally linking different variables. 
-However, when describing phenomena like opinion dynamics, the fluctuating interactions between people appear to be more significant than static variables [@Smith2007;@Vespignani2012].
+However, when describing phenomena like opinion formation in groups, repeated interactions between people appear to be more influential than static variables [@Smith2007;@Vespignani2012].
 Analytical models for the process of opinion formation therefore focus on group dynamics.
 They employ agents whose opinion develops over time as they interact with other agents whose opinion may be similar or different from their own.
 Computer simulations can be used to explore how varying different parameters, like the number of agents or the way agents interact with each other, will affect the distribution of opinions.
@@ -126,14 +126,25 @@ For continous opinion dynamics, the assumption is that opinions are one-dimensio
 The smaller the difference between two numbers is, the closer are the opinions they represent.
 Another main distinction between the models is the way in which other agents' opinions influence one agent's own opinion, i. e., the weight which one agent puts on others' opinions.
 In the easiest case, this weight is modelled as constant, but it might also be modelled as differing, e.g., dependent on the susceptibility of each agent or as dependent on the disparity between two agents' opinions.
-This last case can be described by a so-called bounded confidence model.
-Models like this haven been proposed by both @Hegselmann2002 and  @Nadal2002.
-Here, the agent will only interact with agents whose opinion is relatively close to their own.
+This last case can be described by so-called bounded confidence models which have been proposed by both @Hegselmann2002 and  @Nadal2002.
+With a bounded confidence model, the agent will only interact with agents whose opinion is relatively close to their own.
 To put it another way, they will only put weight on similar opinions.
 The treshold for similarity is defined as the bounds of confidence epsilon which, assuming continous opinion dynamics, represents the maximum difference between the numbers ascribed to the opinions where the other's opinion will still be considered.
-When conducting simulations based on a bounded confidence model, varying the characteristics of epsilon will drastically influence the distribution of opinions [@Hegselmann2002].
-<!--- Add something on the size of confidence level apart from interesting math simulations, add something on the backfire effect --->
-Agent-based modelling as described in chapter Agent-based-modelling uses those analytical models to  determine agent behavior.
+An extension to this model of bounded confidence is something we call the backfire effect.
+As described by @Jager2004, if an agent interacts with another agent whose opinion is very dissimilar, they will not just ignore that opinion.
+Instead, they will shift their opinion to be even further away from the other agents' dissimilar opinion.
+To summarize, for a bounded confidence model with backfire effect, an interaction between two agents has three possible outcomes:
+1. If the difference between their opinions is smaller than or equal to a certain confidence interval epsilon, their opinions will converge.
+2. If the difference between their opinions is bigger than or equal to a certain backfire threshold (which might be equal to epsilon), their opinions will diverge.
+3. If epsilon and the backfire threshold are not equal and the difference between their opinions is between epsilon and the backfire threshould, their opinions will remain unchanged.
+
+<!---Commented this out, because it's not really relevant without discussing the empirical underpinnings. Kept it just in case.
+When conducting simulations based on a bounded confidence model, varying the characteristics of epsilon will drastically influence the distribution of opinions [@Hegselmann2002].--->
+<!--- Put this in limitations:
+Historically, the basis for analytical opinion dynamics models is given by psychological research and philosophical theories about social influence (e.g., [@French1956];[@Wagner1978]).
+And simulations based on those models have frequently proven to reliably enough reproduce real-life phenomena [@Vespignani2012].
+However, as @Flache2017 argue, there is a lack of recent empirical studies reassessing and replicating the assumptions underlying those models, let alone studies examining the size of epsilon in real-life interactions.
+In future research, finding a way to link analytical opinion dynamics models with contemporary empirical psychological findings would be desirable. --->
 
 <!--- Ca. 3 bis 4 Seiten --->
 # Method
