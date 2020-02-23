@@ -116,12 +116,23 @@ Julia was initially introduced by a group of computer scientists and mathematici
 ## Opinion formation and bounded rationality
 In describing social phenomena, social scientists traditionally have tended to employ causal modeling techniques.
 That is, phenomena are explained by causally linking different variables. 
-However, when describing phenomena like opinion dynamics, the fluctuating interactions between people appear to be more significant than static variables [@Smith2007;@Vespignani2012].
-Analytical models for the process of opinion formation focus on agents and how their opinion develops over time as they interact with other agents whose opinion may be similar or different from their own.
-One main distinction between different analytical models is the way in which other agents' opinions influence one agent's own opinion, i. e., the weight which one agent puts on others' opinions.
-In the easiest case, this weight is modelled as constant, but it might also be modelled as differing dependent on the susceptibility of each agent, as dependent on time or as dependent on the disparity between two agents' opionions  [@Hegselmann2002]. This last case can be described by a so-called bounded confidence model.
-In this model, the agent will only interact with agents whose opinion is relatively close to their own [@Lorenz2007].
+However, when describing phenomena like opinion dynamics, the fluctuating interactions between people appear to be more significant than static variables [@Smith2007;@Vespignani2012].
+Analytical models for the process of opinion formation therefore focus on group dynamics.
+They employ agents whose opinion develops over time as they interact with other agents whose opinion may be similar or different from their own.
+Computer simulations can be used to explore how varying different parameters, like the number of agents or the way agents interact with each other, will affect the distribution of opinions.
+@Hegselmann2002 give an overview over how different models mathematically describe the process in varying complexities.
+One distinction between models is how opinion is represented.
+For continous opinion dynamics, the assumption is that opinions are one-dimensional in that they can be described as a  number.
+The smaller the difference between two numbers is, the closer are the opinions they represent.
+Another main distinction between the models is the way in which other agents' opinions influence one agent's own opinion, i. e., the weight which one agent puts on others' opinions.
+In the easiest case, this weight is modelled as constant, but it might also be modelled as differing, e.g., dependent on the susceptibility of each agent or as dependent on the disparity between two agents' opinions.
+This last case can be described by a so-called bounded confidence model.
+Models like this haven been proposed by both @Hegselmann2002 and  @Nadal2002.
+Here, the agent will only interact with agents whose opinion is relatively close to their own.
 To put it another way, they will only put weight on similar opinions.
+The treshold for similarity is defined as the bounds of confidence epsilon which, assuming continous opinion dynamics, represents the maximum difference between the numbers ascribed to the opinions where the other's opinion will still be considered.
+When conducting simulations based on a bounded confidence model, varying the characteristics of epsilon will drastically influence the distribution of opinions [@Hegselmann2002].
+<!--- Add something on the size of confidence level apart from interesting math simulations, add something on the backfire effect --->
 Agent-based modelling as described in chapter Agent-based-modelling uses those analytical models to  determine agent behavior.
 
 <!--- Ca. 3 bis 4 Seiten --->
