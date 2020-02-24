@@ -211,10 +211,6 @@ knitr::include_graphics("../Go_Netlogo.png")
 
 
 
-
-
-
-
 ## Bounded rationality model
 Since our primary goal was to compare the two programming languages with each other, we designed the parameters of the Netlogo model and the Julia model the identical way. Thus, we increased the comparability of the results of both models and reduced the complexity as much as possible. Table Y shows the settings, that we determined from the beginning of the model.   
 
