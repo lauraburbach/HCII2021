@@ -17,7 +17,7 @@ knitr::include_graphics("../examples.pdf")
 
 
 
-```{r all_runs}
+```{r allruns}
 data %>% group_by(run_number, epsilon, backfire, agent_count, program) %>% 
   summarise(opinion_mean = mean(list_op),
             opinion_sd = sd(list_op),
