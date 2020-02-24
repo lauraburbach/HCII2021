@@ -270,6 +270,11 @@ One other aspect, that could be taken into account, is the time, that is needed 
 
 Of course, we have only focused on one very simple bounded rationality model, so that we would have to create further simulations with both languages to be able to make statements about the generality. 
 
+Historically, the basis for analytical opinion dynamics models is given by psychological research and philosophical theories about social influence (e.g., [@French1956];[@Wagner1978]).
+And simulations based on those models have frequently proven to reliably enough reproduce real-life phenomena [@Vespignani2012].
+However, as @Flache2017 argue, there is a lack of recent empirical studies reassessing and replicating the assumptions underlying those models, let alone studies examining the size of epsilon in real-life interactions.
+In future research, finding a way to link analytical opinion dynamics models with contemporary empirical psychological findings would be desirable.
+
 <!--- Ca. 1/2 bis 1 Seite --->
 # Conclusion and outlook
 The results of our research have shown that, although Netlogo is established for a longer time, both programming languages are well-suited to create agent-based models. Comparing the two languages, we could not find one perfect language, but each laguage is the better choice for creating an agent-based model in some aspects. The decision for a programming language depends on different trade-offs (previous experience vs. support; time to create the model vs. time used for simulation run; nice Interface vs. higher functionality). In the end, however, it does not make sense to decide in favor of one language against the other, but to take advantage of both languages and thus use Netlogo for prototyping and Julia for large simulations based on it. 
