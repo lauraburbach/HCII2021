@@ -149,7 +149,7 @@ To built the agent based models, we used either the Julia programming language o
 ## Basics of Agent-based models 
 An agent-based model usually contains a setup and a go procedure. The "setup" procedure defines a kind of basic state at the beginning of the simulation. The "go" procedure then specifies what happens in a single step of the simulation. 
 
-In Netlogo the "setup" procedure usually looks like in Figure X. In Netlogo, procedures always start with "to" and end with "end". Clear-all makes the world go back to its initial, empty state. For example, if colors were assigned to the spots where the agents are located, they will now turn black again. Create-turtles creates the specified number of turtles, here 100. The turtles usually start at the origin, i.e. in the middle of patch 0.0. The code in the square brackets after create-turtles here indicates that the turtles start at a random x and y coordinate. The square brackets could also be used to create other commands for the agents. Reset-ticks makes sure that the tick counter starts. Once this code is created, the simulation starts in the interface by clicking the "Setup" button. 
+In Netlogo the "setup" procedure usually looks like in Figure 2. In Netlogo, procedures always start with "to" and end with "end". Clear-all makes the world go back to its initial, empty state. For example, if colors were assigned to the spots where the agents are located, they will now turn black again. Create-turtles creates the specified number of turtles, here 100. The turtles usually start at the origin, i.e. in the middle of patch 0.0. The code in the square brackets after create-turtles here indicates that the turtles start at a random x and y coordinate. The square brackets could also be used to create other commands for the agents. Reset-ticks makes sure that the tick counter starts. Once this code is created, the simulation starts in the interface by clicking the "Setup" button. 
 
 
 <!--
@@ -199,7 +199,7 @@ knitr::include_graphics("../main_julia.png")
 
 
 ## Go procedure 
-Here we compare the "go" procedures of Netlogo and Julia. Both codes look similar. In Netlogo (see Figure X), the procedure starts by adressing the agents (ask turtles)
+Here we compare the "go" procedures, so what happens in each step of the simulation, of Netlogo and Julia (see Figure 3 and 4). Both codes look similar. In Netlogo (see Figure 4), the procedure starts by adressing the agents (ask turtles)
 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in julia"), echo=FALSE}
 knitr::include_graphics("../Go_julia.png")
