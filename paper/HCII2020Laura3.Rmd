@@ -89,7 +89,12 @@ The perceptions of an agent usually determine the behavioral intent of the agent
 A simple way to create agent-based models is to use software toolkits developed for the creation of simulations. These include the Netlogo toolkit considered in this study. With the use of such toolkits, it is easy to formulate the behavior of the individual agents. They also usually contain some useful interfaces. The interfaces allow to visualize the simulation states, interact with the simulation parameters and export the simulation results. In addition, they usually contain a batch mode. This is used to run a large number of simulations. Optimization strategies, such as genetic algorithms, help to find the most suitable parameters [@Calero2019].
 
  
-To create agent-based models, Netlogo [@Wilensky1999] is the language most commonly used. Nevertheless, there are some other programming languages that are also suitable for creating agent-based models and that seem to be partly more intuitive, at least for people with programming experience. Therefore, in this study we compare two programming languages with respect to their suitability for creating agent-based models. 
+To create agent-based models, Netlogo [@Wilensky1999] is the language most
+commonly used. Nevertheless, there are some other programming languages that are
+also suitable for creating agent-based models and that seem to be partly more
+intuitive, at least for people with programming experience. Therefore, in this
+study we compare two programming languages with respect to their suitability for
+creating agent-based models.
 
 ## Netlogo
 Different platforms to create agent-based models exist. NetLogo consists of a programming language, which was derived from the earlier Logo language and a set of libraries, as well as a programming environment.
@@ -192,25 +197,22 @@ knitr::include_graphics("../BehaviorSpace2.png")
 ## Julia
 Julia is not a language specifically written for agent-based modeling. Julia is a general purpose programming language that uses a just-in-time compiler to generate low level machine code (using LLVM). This means there is no native support for typical agent-based modeling tasks. There is a library for agent-based modeling called `agents`. However, our intention here was to compare the programming language itself without the use of a library. It is unclear whether the library is going to be maintained in the future, whereas Julia's support is not likely to expire soon.
 
-This means the user has to design all tools for agent-based modeling themselves. However, this is not necessarily very hard. It depends on the complexity of the model. When this barrier has been overcome, writing a model becomes easier. The biggest challenge was to find a structure that for exploring parameter spaces. In our approach, we created a set of nested functions that pass the full state of the simulation. Then from the outside we used list comprehension to generate parameter sets. 
-
-Julia provides methods for paralellization using simple macros (code annotations.) This makes preparing code for large scale simulations very easy develop. While the entry barrier significantly is higher for Julia, due to a complex type system, its performance and general purpose approach make it easy to integrate other peoples work. A key benefit are the Python and R integrations that allow using Python and R libraries in Julia.
+This means the user has to design all tools for agent-based modeling themselves. However, this is not necessarily very hard. It depends on the complexity of the model. When this barrier has been overcome, writing a model becomes easier. The language is very similar to python 
 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("main procedure in julia"), echo=FALSE}
 knitr::include_graphics("../main_julia.png")
 ```
 
-In the following section, we will compare different procedures between both versions of our model.
 
 
 ## Go procedure 
-Here we compare the "go" procedures, so what happens in each step of the simulation, of Netlogo and Julia (see Figure 3 and 4). Both codes look similar. In Netlogo (see Figure 4), the procedure starts by adressing the agents (ask turtles). The next line of code says, that the adressed agent gets the opinion of one random other agent. The subsequent lines of code determine what happens to the (new) opinion of the agent. If the other agent's opinion differs less from his own opinion than the epsilon (see above), the agent assumes the average opinion of the two opinions. This means that the opinions of the two agents are added together and divided by two. However, if the opinion of the other agent is further away than the respective (may vary) epsilon indicates, it checks whether the backfire effect exists. If the simulation is set to show that the effect exists, the opinion of the agent is half the distance away from the opinion of the other agent. At the end, the code indicates that the color of the agents depends on the opinion. However, this is only for illustration in the interface. Before the procedure ends, one more "tick" is counted as one time unit. 
-```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in julia"), echo=FALSE}
+Here we compare the "go" procedures, so what happens in each step of the simulation, of Netlogo and Julia (see Figure \ref{GoJulia} and \ref{GoNetlogo}). Both codes look similar. In Netlogo (see Figure \ref{GoNetlogo}), the procedure starts by adressing the agents (ask turtles). The next line of code says, that the adressed agent gets the opinion of one random other agent. The subsequent lines of code determine what happens to the (new) opinion of the agent. If the other agent's opinion differs less from his own opinion than the epsilon (see above), the agent assumes the average opinion of the two opinions. This means that the opinions of the two agents are added together and divided by two. However, if the opinion of the other agent is further away than the respective (may vary) epsilon indicates, it checks whether the backfire effect exists. If the simulation is set to show that the effect exists, the opinion of the agent is half the distance away from the opinion of the other agent. At the end, the code indicates that the color of the agents depends on the opinion. However, this is only for illustration in the interface. Before the procedure ends, one more "tick" is counted as one time unit. 
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in julia"), \label{fig:GoJulia}, echo=FALSE}
 knitr::include_graphics("../Go_julia.png")
 ```
 
 The "go" procedure in Julia is very similar. One difference is that the procedure is passed a configuration (config) at the beginning . Furthermore, an agent list with the agents in random order is passed. 
-```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in Netlogo"), echo=FALSE}
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in Netlogo"), \label{fig:GoNetlogo}, echo=FALSE}
 knitr::include_graphics("../Go_Netlogo.png")
 ```
 
