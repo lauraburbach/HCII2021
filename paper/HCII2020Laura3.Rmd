@@ -98,11 +98,11 @@ however NetLogo also provides a graphical tool for quickly constructing interfac
 Netlogo is visually appealing because the user is provided with a user interface to create and test an agent-based model. In addition to the user interface that simplifies the initial creation of a model, Netlogo also includes a batch mode that allows the user to run any number (usually several hundred) of simulations.
 
 ### Interface
-An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface. Figure 1 shows the Interface of our simulation. 
+An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface. Figure 1 shows the Interface of our simulation. The interface shows a spatial 2D view of the model environment. For Netlogo, this environment is a square grid (there are other platforms that support hexahonal grids, such as Mason and Repast). The Netlogo user can add further elements to this view. These include buttons for setting the model parameters and diagrams that can be used to monitor the results. The added elements can be moved anywhere on the interface. 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Interface of Netlogo"), echo=FALSE}
 knitr::include_graphics("../Netlogo.png")
 ```
-The interface shows a spatial 2D view of the model environment. For Netlogo, this environment is a square grid (there are other platforms that support hexahonal grids, such as Mason and Repast). The Netlogo user can add further elements to this view. These include buttons for setting the model parameters and diagrams that can be used to monitor the results. The added elements can be moved anywhere on the interface. 
+
 
 ## Julia
 Julia was initially introduced by a group of computer scientists and mathematicians at MIT under the direction of Alan Edelman. Compared to other programming languages Julia is considered fast, easy to learn and use and it is open source. Julia has a fast numerical speed because it is based on a LLVM (Low Level Virtual Machine) based JIT (Just-in-Time) compiler. Further advantages of Julia compared to other programming languages are that it supports parallelization or practical functional programming and can be easily combined with other programming languages and libraries. Finally, there is already a group of active users who develop packages (and thereby add functions to the base language; as of April 6, 2019, there are 1774 registered packages). 
