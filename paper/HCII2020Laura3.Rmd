@@ -192,6 +192,10 @@ knitr::include_graphics("../BehaviorSpace2.png")
 
 Netlogo provides immediate visual feedback for the user of an agent-based model and has easy to understand primitives that allow modelling of agent behavior, agent interactions, and agent-environment interactions. It provides an API for extensions, to allow other researchers to complement the functionality of Netlogo.
 
+```{r interface, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Interface of our bounded rationality model in Netlogo"), echo=FALSE}
+knitr::include_graphics("../Netlogo.png")
+```
+
 Overall, it is very easy to start using Netlogo. However, creating complex models requires understanding of usage contexts in the language. People coming to Netlogo with a computer science background may find some of the language concepts unintuitive and clunky. Several of the authors of this paper have found Netlogo syntax to be confusing and unecessary simplistic. 
 
 
@@ -208,9 +212,6 @@ Netlogo is visually appealing because the user is provided with a user interface
 An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface. Figure \@ref(fig:interface) shows the Interface of our simulation. The interface shows a spatial 2D view of the model environment. For Netlogo, this environment is a square grid (there are other platforms that support hexahonal grids, such as Mason and Repast). The Netlogo user can add further elements to this view. These include buttons for setting the model parameters and diagrams that can be used to monitor the results. The added elements can be moved anywhere on the interface. 
 
 is partly due to the fact that the platform's interface makes it easier to get started with the programming language.   Figure \@ref(fig:interface) shows the Interface of our simulation. The interface shows a spatial 2D view of the model environment. For Netlogo, this environment is a square grid (there are other platforms that support hexahonal grids, such as Mason and Repast). The Netlogo user can add further elements to this view. These include buttons for setting the model parameters and diagrams that can be used to monitor the results. The added elements can be moved anywhere on the interface. --->
-```{r interface, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Interface of our bounded rationality model in Netlogo"), echo=FALSE}
-knitr::include_graphics("../Netlogo.png")
-```
 
 ### Julia
 Julia was initially introduced by a group of computer scientists and mathematicians at MIT under the direction of Alan Edelman. Compared to other programming languages Julia is considered fast, easy to learn and use and it is open source. Julia has a fast numerical speed because it is based on a LLVM (Low Level Virtual Machine) based JIT (Just-in-Time) compiler. Further advantages of Julia compared to other programming languages are that it supports parallelization or practical functional programming and can be easily combined with other programming languages and libraries. Finally, there is already a group of active users who develop packages (and thereby add functions to the base language; as of April 6, 2019, there are 1774 registered packages). 
