@@ -65,7 +65,7 @@ In this study, using Agent-based modelling we consider opinion formation process
 
 Therefore, we explain, which aspects lead to complexity, we introduce the method Agent-based modelling and the two programming languages Netlogo and Julia. Besides, we eplain what is known in theory about opinion formation or the spread of information. 
 
-## Complexity and how to modell it
+## Complexity and how to model it
 When examining opinion-forming processes, we look at a complex system. Such complex systems can be divided into several ontological levels or interacting subsystems on a micro- or macro-level [@Conte2012] We first have to look at how systems are structurally designed in order to deduce what leads to complexity [@Valdez2018human]. Further, complex systems lead to emergent phenomena. These complex systems and emergent phenomena are difficult to understand, because while it is easy to observe the individual system components, the resulting overall system cannot be considered as the sum of its parts. Instead, understanding the system behavior requires more than understanding the individual parts of the system [@Valdez2018human].  
 
 ### Complex vs. complicated
