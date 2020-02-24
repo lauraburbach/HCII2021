@@ -169,7 +169,6 @@ knitr::include_graphics("../setup11.png")
 ## Before the model starts
 In the beginning of our bounded rationality model, we defined the maximum number of agents, the maximum steps of the simulation, the seed, an epsilon as well as whether a backfire effect takes place or not. The epsilon indicates how different the opinions of two people can be, so that they still include the other person's opinion in their opinion making. We further defined from the beginning, that each agent has an (floating) opinion between 0 and 1. In each simulation step, every agent compares his opinion with the opinion of an other agent. For example, if Anna compares her opinion with Ralf and the distance between the opinion of Anna and Ralf is smaller than the defined epsilon, then the two converge in their opinions. Additionally we defined in the beginning, whether an backfire effect takes place or not. When the simulation includes the backfire-effect and an agent Ralf's opinion deviates more than the epsilon indicates from Anna's opinion, then the opinion of Anna distances from the opinion of Ralf. 
 
-
 ## Getting started with both languages
 Both Julia and Netlogo are languages that address both researchers and beginners. 
 Netlogo is derived from Logo a language that is aimed at children to lern programming. 
