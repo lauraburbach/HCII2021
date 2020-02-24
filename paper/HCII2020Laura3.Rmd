@@ -82,7 +82,7 @@ To analyse complex systems we need a suitable approach, such as simulations, whi
 
 Agent-based models always consist of the agents or individuals and the environment in which the agents reside [@Bonabeau2002Agentbased]. They are neither a representation of reality, nor fully realistic or even complete. Instead, they show a simplified reality. Nevertheless, agent-based models show behaviour on an individual level close to reality. By mapping the individual behavior, the behavior of the overall system can then be qualitatively observed [@Rouchier2008]. Agent-based models are well suited to replicate data and present the results to non-experts [@Kiesling2012]. The use of a method always requires an evaluation of the method. Evaluating agent-based models is not easy. In order to evaluate them, independent replicating and comparing with other model as well as a validation are necessary [@Rouchier2008].
 
-The basis of agent-based modeling is the single agent or the individual. This agent is modelled programmatically as a template. In simulation, due agents make their own decisions based on how they perceive the environment in which they are situated. Thus, in our model
+The basis of agent-based modeling is the single agent or the individual. This agent is modelled programmatically as a template. In simulation, due agents make their own decisions based on how they perceive the environment in which they are situated. 
 The perceptions of an agent usually determine the behavioral intent of the agent. If the agents are in a social network, as in our model, they influence their neighbours in the next iteration by their behavioural intention or the behaviour they show. To determine the probability of organizational acceptance, we analyze the results of several agent-based simulations.
 
 A simple way to create agent-based models is to use software toolkits developed for the creation of simulations. These include the Netlogo toolkit considered in this study. With the use of such toolkits, it is easy to formulate the behavior of the individual agents. They also usually contain some useful interfaces. The interfaces allow to visualize the simulation states, interact with the simulation parameters and export the simulation results. In addition, they usually contain a batch mode. This is used to run a large number of simulations. Optimization strategies, such as genetic algorithms, help to find the most suitable parameters [@Calero2019].
@@ -99,17 +99,13 @@ Netlogo is visually appealing because the user is provided with a user interface
 
 ### Interface
 An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface. Figure 1 shows the Interface of our simulation. 
-
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Interface of Netlogo"), echo=FALSE}
 knitr::include_graphics("../Netlogo.png")
 ```
-
 The interface shows a spatial 2D view of the model environment. For Netlogo, this environment is a square grid (there are other platforms that support hexahonal grids, such as Mason and Repast). The Netlogo user can add further elements to this view. These include buttons for setting the model parameters and diagrams that can be used to monitor the results. The added elements can be moved anywhere on the interface. 
 
 ## Julia
 Julia was initially introduced by a group of computer scientists and mathematicians at MIT under the direction of Alan Edelman. Compared to other programming languages Julia is considered fast, easy to learn and use and it is open source. Julia has a fast numerical speed because it is based on a LLVM (Low Level Virtual Machine) based JIT (Just-in-Time) compiler. Further advantages of Julia compared to other programming languages are that it supports parallelization or practical functional programming and can be easily combined with other programming languages and libraries. Finally, there is already a group of active users who develop packages (and thereby add functions to the base language; as of April 6, 2019, there are 1774 registered packages). 
-
-
 
 ## Opinion formation and bounded rationality
 In describing social phenomena, social scientists traditionally have tended to employ causal modeling techniques.
