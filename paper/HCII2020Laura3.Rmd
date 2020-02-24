@@ -183,8 +183,8 @@ The core aim of Julia is to make code fast, reusable and easy to understand.
 This quick introduction by no means covers the breadth of both of these languages, it aims to provide a high-level overview.
 
 ### Netlogo
-Netlogo as a modelling language for agent-based modeling is very well suited for beginners wanting to use agent-based modeling. It comes with a rich variety of example models that users can explore and provides a graphical user interface and a graphical user interface toolkit to create models that even non-experts can use. 
-Netlogo provides methods for inspecting the model (reporters and visualizations) and for exploring the impact of model parameters on system behavior (i.e. the *behavior space* feature). The latter allows turning of the GUI for faster simulations (see Fig. \@ref(fig:nbehspc)).
+Netlogo as a modelling language for agent-based modeling is very well suited for beginners wanting to use agent-based modeling. It comes with a rich variety of example models that users can explore and provides a graphical user interface and a graphical user interface toolkit to create models that even non-experts can use. Thus, Netlogo is visually appealing and the interface enables users to create and test agent-based models and also simplifies the initial creation of a model. Figure \@ref(fig:interface) shows the Interface of our simulation. 
+Netlogo also provides methods for inspecting the model (reporters and visualizations) and for exploring the impact of model parameters on system behavior (i.e. the *behavior space* feature, which allows the user to run any number (usually several hundred) of simulations). The latter allows turning of the GUI for faster simulations (see Fig. \@ref(fig:nbehspc)).
 
 Netlogo provides immediate visual feedback for the user of an agent-based model and has easy to understand primitives that allow modelling of agent behavior, agent interactions, and agent-environment interactions. It provides an API for extensions, to allow other researchers to complement the functionality of Netlogo.
 
@@ -195,26 +195,25 @@ knitr::include_graphics("../BehaviorSpace2.png")
 ```
 
 
-## Netlogo
-Different platforms to create agent-based models exist. Netlogo consists of a programming language, which was derived from the earlier Logo language and a set of libraries, as well as a programming environment.
+<!--- ## Netlogo
+Different platforms to create agent-based models exist. Netlogo consists of a programming language, which was derived from the earlier Logo language and a set of libraries, as well as a programming environment.Ca. 
 
 Netlogo also provides a graphical tool for quickly constructing interfaces for running agent-based models.
 
 Netlogo is visually appealing because the user is provided with a user interface to create and test an agent-based model. In addition to the user interface that simplifies the initial creation of a model, Netlogo also includes a batch mode that allows the user to run any number (usually several hundred) of simulations.
+--->
 
-### Interface
+<!--- ### Interface
 An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface. Figure \@ref(fig:interface) shows the Interface of our simulation. The interface shows a spatial 2D view of the model environment. For Netlogo, this environment is a square grid (there are other platforms that support hexahonal grids, such as Mason and Repast). The Netlogo user can add further elements to this view. These include buttons for setting the model parameters and diagrams that can be used to monitor the results. The added elements can be moved anywhere on the interface. 
+
+is partly due to the fact that the platform's interface makes it easier to get started with the programming language.   Figure \@ref(fig:interface) shows the Interface of our simulation. The interface shows a spatial 2D view of the model environment. For Netlogo, this environment is a square grid (there are other platforms that support hexahonal grids, such as Mason and Repast). The Netlogo user can add further elements to this view. These include buttons for setting the model parameters and diagrams that can be used to monitor the results. The added elements can be moved anywhere on the interface. --->
 ```{r interface, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Interface of our bounded rationality model in Netlogo"), echo=FALSE}
 knitr::include_graphics("../Netlogo.png")
 ```
 
-## Julia
+### Julia
 Julia was initially introduced by a group of computer scientists and mathematicians at MIT under the direction of Alan Edelman. Compared to other programming languages Julia is considered fast, easy to learn and use and it is open source. Julia has a fast numerical speed because it is based on a LLVM (Low Level Virtual Machine) based JIT (Just-in-Time) compiler. Further advantages of Julia compared to other programming languages are that it supports parallelization or practical functional programming and can be easily combined with other programming languages and libraries. Finally, there is already a group of active users who develop packages (and thereby add functions to the base language; as of April 6, 2019, there are 1774 registered packages). 
 
-
-
-
-### Julia
 Julia is not a language specifically written for agent-based modeling. Julia is a general purpose programming language that uses a just-in-time compiler to generate low level machine code (using LLVM). This means there is no native support for typical agent-based modeling tasks. There is a library for agent-based modeling called `agents`. However, our intention here was to compare the programming language itself without the use of a library. It is unclear whether the library is going to be maintained in the future, whereas Julia's support is not likely to expire soon.
 
 This means the user has to design all tools for agent-based modeling themselves. However, this is not necessarily very hard. It depends on the complexity of the model. When this barrier has been overcome, writing a model becomes easier. The language is very similar to python 
@@ -250,9 +249,8 @@ As Figure \@ref(fig:all_runs) shows, if the epsilon is higher than 0.55, practic
 When comparing both programming languages to create an agent-based model that simulates the bounded rationality model, Julia  proved to be a faster language. The whole simulaton took only 82.23 seconds, whereas the Netlogo simulation took 36 minutes. While the model calculation in Julia is much faster, Netlogo required less than half the lines of code. To write the bounded rationality model in Julia 97 lines of code were necessary, in Netlogo only 44 lines of code were necessary.
 
 When we consider how difficult it is to learn the two programming languages, we also have to take into account the previous knowledge of the users. Thus Netlogo proved to be a language that is easier to learn for people without programming skills. In contrast, people with previous programming skills reported, that it is easier to learn Julia, because it is more similar to other already used programming languages (for example Python). 
-<!--- @andre hier --->
 
-The fact that Netlogo is easier to learn for people without previous programming experience is partly due to the fact that the platform's interface makes it easier to get started with the programming language. The interface offers the user direct feedback, as the simulation runs visibly if he has written the code correctly and also immediately reports back error messages if the code is wrong. In addition, the interface allows the user to try out and change various things in the process. 
+An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface.These interface makes it easier to get started with and learn the language for people without previous programming experience. The interface offers the user direct feedback, as the simulation runs visibly if he has written the code correctly and also immediately reports back error messages if the code is wrong. In addition, the interface allows the user to try out and change various things in the process. 
 
 Also, the fact that there is already a large library of existing agent-based models in Netlogo, since the language is used exclusively for this method, makes it easier to use, since existing models can be built upon or users can orient themselves on them. 
 
