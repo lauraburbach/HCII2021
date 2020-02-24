@@ -186,13 +186,14 @@ This quick introduction by no means covers the breadth of both of these language
 Netlogo as a modelling language for agent-based modeling is very well suited for beginners wanting to use agent-based modeling. It comes with a rich variety of example models that users can explore and provides a graphical user interface and a graphical user interface toolkit to create models that even non-experts can use. Thus, Netlogo is visually appealing and the interface enables users to create and test agent-based models and also simplifies the initial creation of a model. Figure \@ref(fig:interface) shows the Interface of our simulation. 
 Netlogo also provides methods for inspecting the model (reporters and visualizations) and for exploring the impact of model parameters on system behavior (i.e. the *behavior space* feature, which allows the user to run any number (usually several hundred) of simulations). The latter allows turning of the GUI for faster simulations (see Fig. \@ref(fig:nbehspc)).
 
+```{r nbehspc, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Behavior Space in Netlogo"), echo=FALSE}
+knitr::include_graphics("../BehaviorSpace2.png")
+```
+
 Netlogo provides immediate visual feedback for the user of an agent-based model and has easy to understand primitives that allow modelling of agent behavior, agent interactions, and agent-environment interactions. It provides an API for extensions, to allow other researchers to complement the functionality of Netlogo.
 
 Overall, it is very easy to start using Netlogo. However, creating complex models requires understanding of usage contexts in the language. People coming to Netlogo with a computer science background may find some of the language concepts unintuitive and clunky. Several of the authors of this paper have found Netlogo syntax to be confusing and unecessary simplistic. 
 
-```{r nbehspc, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Behavior Space in Netlogo"), echo=FALSE}
-knitr::include_graphics("../BehaviorSpace2.png")
-```
 
 
 <!--- ## Netlogo
