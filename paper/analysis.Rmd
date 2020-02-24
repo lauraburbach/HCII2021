@@ -32,6 +32,7 @@ data %>% group_by(run_number, epsilon, backfire, agent_count, program) %>%
   geom_jitter(alpha = 0.5) +
   facet_grid(backfire~program, scales = "free_y") +
   theme_bw()
+  knitr::kable(caption = "How language, epsilon and backfire influence on opinion count", booktabs = T, longtable = F)
 
 ```
 
