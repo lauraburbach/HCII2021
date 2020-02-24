@@ -148,7 +148,7 @@ Using two different programming languages (Netlogo and Julia language), we creat
 To built the agent based models, we used either the Julia programming language or Netlogo. For Julia we used the Atom editor. We used version 6.0.4 of the multi-agent programming language Netlogo, which was developed by Uri Wilensky [@Wilensky1999]. For the following analysis of the results we used R Markdown. 
 
 ## Basics of Agent-based models 
-An agent-based model usually contains a setup and a go procedure. The "setup" procedure defines a kind of basic state at the beginning of the simulation. The "go" procedure then specifies what happens in a single step of the simulation. 
+An agent-based model usually contains a "setup" and a "go" procedure. The "setup" procedure defines a kind of basic state at the beginning of the simulation. The "go" procedure then specifies what happens in a single step of the simulation. 
 
 In Netlogo the "setup" procedure usually looks like in Figure 2. In Netlogo, procedures always start with "to" and end with "end". Clear-all makes the world go back to its initial, empty state. For example, if colors were assigned to the spots where the agents are located, they will now turn black again. Create-turtles creates the specified number of turtles, here 100. The turtles usually start at the origin, i.e. in the middle of patch 0.0. The code in the square brackets after create-turtles here indicates that the turtles start at a random x and y coordinate. The square brackets could also be used to create other commands for the agents. Reset-ticks makes sure that the tick counter starts. Once this code is created, the simulation starts in the interface by clicking the "Setup" button. 
 
@@ -162,13 +162,12 @@ to setup
 end
 \end{lstlisting}-->
 
-```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("setup procedure in Netlogo"), echo=FALSE}
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Setup procedure in Netlogo"), echo=FALSE}
 knitr::include_graphics("../setup11.png")
 ```
 
 ## Before the model starts
-In our bounded rationality model, we defined the maximum number of agents, the maximum steps of the simulation, the seed, an epsilon and whether a backfire effect takes place or not in the beginning. The epsilon indicates how different the opinions of two people can be, so that they still include the other person's opinion in their opinion making. We further defined from the beginning, that each agent has an (floating) opinion between 0 and 1. In each simulation step, every agent compares his opinion with the opinion of an other agent. For example, if Anna compares her opinion with Ralf and the distance between the opinion of Anna and Ralf is smaller than the defined epsilon, then the two converge in their opinions. Additionally we defined in the beginning, whether an backfire effect takes place or not. 
-
+In the beginning of our bounded rationality model, we defined the maximum number of agents, the maximum steps of the simulation, the seed, an epsilon as well as whether a backfire effect takes place or not. The epsilon indicates how different the opinions of two people can be, so that they still include the other person's opinion in their opinion making. We further defined from the beginning, that each agent has an (floating) opinion between 0 and 1. In each simulation step, every agent compares his opinion with the opinion of an other agent. For example, if Anna compares her opinion with Ralf and the distance between the opinion of Anna and Ralf is smaller than the defined epsilon, then the two converge in their opinions. Additionally we defined in the beginning, whether an backfire effect takes place or not. When the simulation includes the backfire-effect and an agent Ralf's opinion deviates more than the epsilon indicates from Anna's opinion, then the opinion of Anna distances from the opinion of Ralf. 
 
 ## Getting started with both languages
 Both Julia and Netlogo are languages that address both researchers and beginners. 
