@@ -199,11 +199,9 @@ Julia is not a language specifically written for agent-based modeling. Julia is 
 
 This means the user has to design all tools for agent-based modeling themselves. However, this is not necessarily very hard. It depends on the complexity of the model. When this barrier has been overcome, writing a model becomes easier. The language is very similar to python 
 
-```{r main, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("main procedure in julia"), echo=FALSE}
+```{r main, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Main procedure in julia"), echo=FALSE}
 knitr::include_graphics("../main_julia.png")
 ```
-
-
 
 ## Go procedure 
 Here we compare the "go" procedures, so what happens in each step of the simulation, of Netlogo and Julia (see Fig. \@ref(fig:goj) and Fi. \@ref(fig:gon)). Both codes look similar. In Netlogo (see Fig. \@ref(fig:gon)), the procedure starts by adressing the agents (ask turtles). The next line of code says, that the adressed agent gets the opinion of one random other agent. The subsequent lines of code determine what happens to the (new) opinion of the agent. If the other agent's opinion differs less from his own opinion than the epsilon (see above), the agent assumes the average opinion of the two opinions. This means that the opinions of the two agents are added together and divided by two. However, if the opinion of the other agent is further away than the respective (may vary) epsilon indicates, it checks whether the backfire effect exists. If the simulation is set to show that the effect exists, the opinion of the agent is half the distance away from the opinion of the other agent. At the end, the code indicates that the color of the agents depends on the opinion. However, this is only for illustration in the interface. Before the procedure ends, one more "tick" is counted as one time unit. 
@@ -215,8 +213,6 @@ The "go" procedure in Julia is very similar. One difference is that the procedur
 ```{r gon, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in Netlogo"), echo=FALSE}
 knitr::include_graphics("../Go_Netlogo.png")
 ```
-
-
 
 ## Bounded rationality model
 Since our primary goal was to compare the two programming languages with each other, we designed the parameters of the Netlogo model and the Julia model the identical way. Thus, we increased the comparability of the results of both models and reduced the complexity as much as possible. While in Netlogo the parameters for the simulation runs are determined in the Behavior Space (see Fig. \@ref(fig:nbehspc)), in Julia the initial settings are determined in the "main" procedure, what can be seen in Figure \@ref(fig:main).  
