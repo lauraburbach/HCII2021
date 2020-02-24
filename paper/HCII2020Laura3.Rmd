@@ -1,5 +1,6 @@
 ---
 title: "Netlogo vs. Julia: Evaluating different options for the simulation of opinion dynamics"
+title-running: "Evaluating different options for opinion dynamics"
 author-inputfile: "authors.tex" 
 abstract: |
   Analysing complex phenomena, such as the world we live in, or complex interactions, also requires methods that are suitable for considering both the individual aspects of these phenomena and the resulting overall system. As a method well suited for the consideration of complex phenomena, we consider agent-based models in this study. Using two programming languages (Netlogo and Julia) we simulate a simple bounded-rationality opinion formation model with and without backfire effect. We analyzed, which of the languages is better for the creation of agent-based models and found, that both languages have some advantages for the creation of simulations. While Julia is much faster in simulating a model, Netlogo has a nice Interface and is more intutitive to use for non-computer scientists. Thus the choice of the programming language remains always a trade-off and in future more complex models should be considered using both programming languages. 
@@ -190,7 +191,9 @@ knitr::include_graphics("../BehaviorSpace2.png")
 ```
 
 ## Julia
-Julia is not a language specifically written for agent-based modeling.
+Julia is not a language specifically written for agent-based modeling. Julia is a general purpose programming language that uses a just-in-time compiler to generate low level machine code (using LLVM). This means there is no native support for typical agent-based modeling tasks. There is a library for agent-based modeling called `agents`. However, our intention here was to compare the programming language itself without the use of a library. It is unclear whether the library is going to be maintained in the future, whereas Julia's support is not likely to expire soon.
+
+This means the user has to design all tools for agent-based modeling themselves. However, this is not necessarily very hard. It depends on the complexity of the model. When this barrier has been overcome, writing a model becomes easier. The language is very similar to python 
 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("main procedure in julia"), echo=FALSE}
 knitr::include_graphics("../main_julia.png")
