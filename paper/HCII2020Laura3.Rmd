@@ -193,12 +193,15 @@ knitr::include_graphics("../BehaviorSpace2.png")
 ## Julia
 Julia is not a language specifically written for agent-based modeling. Julia is a general purpose programming language that uses a just-in-time compiler to generate low level machine code (using LLVM). This means there is no native support for typical agent-based modeling tasks. There is a library for agent-based modeling called `agents`. However, our intention here was to compare the programming language itself without the use of a library. It is unclear whether the library is going to be maintained in the future, whereas Julia's support is not likely to expire soon.
 
-This means the user has to design all tools for agent-based modeling themselves. However, this is not necessarily very hard. It depends on the complexity of the model. When this barrier has been overcome, writing a model becomes easier. The language is very similar to python 
+This means the user has to design all tools for agent-based modeling themselves. However, this is not necessarily very hard. It depends on the complexity of the model. When this barrier has been overcome, writing a model becomes easier. The biggest challenge was to find a structure that for exploring parameter spaces. In our approach, we created a set of nested functions that pass the full state of the simulation. Then from the outside we used list comprehension to generate parameter sets. 
+
+Julia provides methods for paralellization using simple macros (code annotations.) This makes preparing code for large scale simulations very easy develop. While the entry barrier significantly is higher for Julia, due to a complex type system, its performance and general purpose approach make it easy to integrate other peoples work. A key benefit are the Python and R integrations that allow using Python and R libraries in Julia.
 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("main procedure in julia"), echo=FALSE}
 knitr::include_graphics("../main_julia.png")
 ```
 
+In the following section, we will compare different procedures between both versions of our model.
 
 
 ## Go procedure 
