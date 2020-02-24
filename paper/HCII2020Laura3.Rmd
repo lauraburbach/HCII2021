@@ -205,7 +205,7 @@ knitr::include_graphics("../Go_Netlogo.png")
 ## Bounded rationality model
 Since our primary goal was to compare the two programming languages with each other, we designed the parameters of the Netlogo model and the Julia model the identical way. Thus, we increased the comparability of the results of both models and reduced the complexity as much as possible. While in Netlogo the parameters for the simulation runs are determined in the Behavior Space (see Fig. \@ref(fig:nbehspc)), in Julia the initial settings are determined in the "main" procedure, what can be seen in Figure \@ref(fig:main).  
 
-As can be seen in Figure \@ref(fig:main) and \@ref(fig:nbehspc, we set the number of agents 100 to 500 in increments of hundreds (100:100:500). We varied the epsilon between 0.1 and 1 in increments of 0.1 and varied between with backfire-effect and without (true/false). We set the maximum number of steps to 100. 
+As can be seen in Figure \@ref(fig:main) and \@ref(fig:nbehspc), we set the number of agents 100 to 500 in increments of hundreds (100:100:500). We varied the epsilon between 0.1 and 1 in increments of 0.1 and varied between with backfire-effect and without (true/false). We set the maximum number of steps to 100. 
 
 ## What do we compare
 To find out whether both programming languages are euqually suitable to simulate our bounded rationality model, we look at severeal measurable criteria. These criteria include the outcomes and performance of both models. They further include how many lines of code are necessary to program the simulation. Another aspect, that we take into consideration, is, if learning Julia and Netlogo is equally difficult. For this aspect we consider both computer scientists who are familiar with other programming languages and a person who has no previous experience with programming languages. We further compare the explorability and scalability of both languages.
@@ -224,9 +224,9 @@ Following we consider, how the opinion of the agents changed during the simulati
 
 We use four examples (see Fig. \@ref(fig:examples)) to illustrate how the agents change their opinion during the simulation and how different the opinions look at the end of the simulation. As can be seen at the top left of Figure \@ref(fig:examples), one possible outcome is that the opinions of the agents diverge completely and only two extreme opinions are formed. After less than 15 simulation steps, every agent has either opinion 0.00 or opinion 1.00. In this example, the epsilon is low and the backfire effect takes place. 
 
-In comparison to this example, in the third example (bottom left) no backfire effect takes place. In both examples, the epsilon is 0.1. Comparing the two examples, it becomes clear that the backfire effect increases the divergence of opinions. While in the first example two clear opinions quickly establish, in the third example there are more different opinions for a longer time. After 20 simulation steps, two groups of agents form whose opinions are similar to each other. Nevertheless, even after 30 simulation steps, these agents still have similar opinions but not one uniform opinion. 
+In comparison to this example, in the third example (bottom left) no backfire effect takes place. In both examples, the epsilon is 0.1. Comparing the two examples, it becomes clear that the backfire effect increases the divergence of opinions. While in the first example two clear opinions quickly establish, in the third example there are more different opinions for a longer time. After 20 simulation steps, two groups of agents form whose opinions are similar to each other. Nevertheless, even after 30 simulation steps, these agents still have similar opinions, but not one uniform opinion. 
 
-In example 4 (bottom right), also no backfire takes place. Here the different opinions converge to a consensus of opinion. After around 20 simulation steps each agent has the opinion 0.5. 
+In example 4 (bottom right), also no backfire takes place. Here, the different opinions converge to a consensus of opinion. After around 20 simulation steps each agent has the opinion 0.5. 
 
 In contrast, in example 2 (top right) no majority opinion develops, but several groups with the same opinions form. In this example, the epsilon is higher than in the other examples, which leads the agents to accept opinions that differ more from their own than in the other examples. 
  
@@ -264,9 +264,12 @@ In future research, finding a way to link analytical opinion dynamics models wit
 
 <!--- Ca. 1/2 bis 1 Seite --->
 # Conclusion and outlook
-The results of our research have shown that, although Netlogo is established for a longer time, both programming languages are well-suited to create agent-based models. Comparing the two languages, we could not find one perfect language, but each laguage is the better choice for creating an agent-based model in some aspects. The decision for a programming language depends on different trade-offs (previous experience vs. support; time to create the model vs. time used for simulation run; nice Interface vs. higher functionality). In the end, however, it does not make sense to decide in favor of one language against the other, but to take advantage of both languages and thus use Netlogo for prototyping and Julia for large simulations based on it. 
+The results of our research have shown that, although Netlogo has been established for a longer time, both programming languages are well-suited to create agent-based models. 
+Comparing the two languages, we could not find one perfect language, but each laguage is the better choice for creating an agent-based model in some aspects. 
+The decision for a programming language depends on different trade-offs (previous experience vs. support; time to create the model vs. time used for simulation run; nice interface vs. higher functionality). 
+In the end, however, it does not make sense to decide in favor of one language against the other, but to take advantage of both languages and thus use Netlogo for prototyping and Julia for larger simulations based on these prototypes. 
 
-With this study we compared Julia and Netlogo to create a very simple bounded rationality model. In the future we would like to extend this comparison by using both languages for more complex simulations. We further plan to pursue with studies, that combine both languages. 
+With this study we compared Julia and Netlogo to create a very simple bounded rationality model. In the future, we would like to extend this comparison by using both languages for more complex simulations. We further plan to pursue with studies, that combine both languages. 
 
 ### Acknowledgements {-}
 This research was supported by the Digital Society research program funded by the Ministry of Culture and Science of the German State of North Rhine-Westphalia.
