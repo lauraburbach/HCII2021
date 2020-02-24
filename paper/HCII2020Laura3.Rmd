@@ -219,13 +219,9 @@ knitr::include_graphics("../Go_Netlogo.png")
 
 
 ## Bounded rationality model
-Since our primary goal was to compare the two programming languages with each other, we designed the parameters of the Netlogo model and the Julia model the identical way. Thus, we increased the comparability of the results of both models and reduced the complexity as much as possible. Table Y shows the settings, that we determined from the beginning of the model.   
+Since our primary goal was to compare the two programming languages with each other, we designed the parameters of the Netlogo model and the Julia model the identical way. Thus, we increased the comparability of the results of both models and reduced the complexity as much as possible. While in Netlogo the parameters for the simulation runs are determined in the Behavior Space (see Fig. \@ref(fig:nbehspc)), in Julia the initial settings are determined in the "main" procedure, what can be seen in Figure \@ref(fig:main).  
 
-### Opinion
-
-### Network
-
-
+As can be seen in Figure \@ref(fig:main) and \@ref(fig:nbehspc, we set the number of agents 100 to 500 in increments of hundreds (100:100:500). We varied the epsilon between 0.1 and 1 in increments of 0.1 and varied between with backfire-effect and without (true/false). We set the maximum number of steps to 100. 
 
 ## What do we compare
 To find out whether both programming languages are euqually suitable to simulate our bounded rationality model, we look at severeal measurable criteria. These criteria include the outcomes and performance of both models. They further include how many lines of code are necessary to program the simulation. Another aspect, that we take into consideration, is, if learning Julia and Netlogo is equally difficult. For this aspect we consider both computer scientists who are familiar with other programming languages and a person who has no previous experience with programming languages. We further compare the explorability and scalability of both languages.
