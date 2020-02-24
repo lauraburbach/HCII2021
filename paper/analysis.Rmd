@@ -11,7 +11,7 @@ data <- read_rds("../data/alldata.rds")
 
 
 
-```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Four exemplarily examples"), echo=FALSE}
+```{r examples, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Four exemplarily examples"), echo=FALSE}
 knitr::include_graphics("../examples.pdf")
 ```
 
