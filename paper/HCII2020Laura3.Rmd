@@ -168,7 +168,7 @@ end
 \end{lstlisting}-->
 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Setup procedure in Netlogo"), echo=FALSE}
-knitr::include_graphics("../setup11.png")
+knitr::include_graphics("../setupNlogo.png")
 ```
 
 ## Before the model starts
