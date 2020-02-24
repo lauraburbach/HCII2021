@@ -144,9 +144,13 @@ Using two different programming languages (Netlogo and Julia language), we creat
 We built the agent based models using the Atom editor of the Julia programming language and version 6.0.4 of the multi-agent programming language Netlogo, which was developed by Uri Wilensky [@Wilensky1999]. For the following analysis of the results we used R Markdown. 
 
 ## Basics of Agent-based models 
-An agent-based model usually contains a "setup" and a "go" procedure. The "setup" procedure defines a kind of basic state at the beginning of the simulation. The "go" procedure then specifies what happens in a single step of the simulation. 
+While we have previously (see chapter 2) explained what agent-based models are and what they are used for, we following describe how they are structured programmatically. We start with the most basic components. 
+
+An agent-based model usually contains a "setup" and a "go" procedure. The "setup" procedure defines a kind of basic state at the beginning of the simulation. The "go" procedure then specifies what happens in a single step of the simulation.
 
 In Netlogo the "setup" procedure usually looks like in Figure \@ref(fig:setup). In Netlogo, procedures always start with "to" and end with "end". Clear-all makes the world go back to its initial, empty state. For example, if colors were assigned to the spots where the agents are located, they will now turn black again. Create-turtles creates the specified number of turtles, here 100. The turtles usually start at the origin, i.e. in the middle of patch 0.0. The code in the square brackets after create-turtles here indicates that the turtles start at a random x and y coordinate. The square brackets could also be used to create other commands for the agents. Reset-ticks makes sure that the tick counter starts. Once this code is created, the simulation starts in the interface by clicking the "Setup" button. 
+
+Additionally, the agents and their environment are designed before the simulation starts. For example, properties are assigned to the agents and the agents' environment is designed to resemble the reality of what is being observed. In our case, the agents do not have specific properties and the environment is also in its default state. 
 <!--
 \begin{lstlisting}[caption = The setup method in NetLogo]
 to setup
@@ -163,6 +167,32 @@ knitr::include_graphics("../setupNlogo.png")
 ## Before the model starts
 In the beginning of our bounded rationality model, we defined the maximum number of agents, the maximum steps of the simulation, the seed, an epsilon as well as whether a backfire effect takes place or not. The epsilon indicates how different the opinions of two people can be, so that they still include the other person's opinion in their opinion making. We further defined from the beginning, that each agent has an (floating) opinion between 0 and 1. In each simulation step, every agent compares his opinion with the opinion of an other agent. For example, if Anna compares her opinion with Ralf and the distance between the opinion of Anna and Ralf is smaller than the defined epsilon, then the two converge in their opinions. Additionally we defined in the beginning, whether an backfire effect takes place or not. When the simulation includes the backfire-effect and Ralf's opinion deviates more than the epsilon indicates from Anna's opinion, then the opinion of Anna distances from the opinion of Ralf. 
 
+
+## Go procedure 
+Here we compare the "go" procedures, so what happens in each step of the simulation, of Netlogo and Julia (see Fig. \@ref(fig:goj) and Fi. \@ref(fig:gon)). Both codes look similar. In Netlogo (see Fig. \@ref(fig:gon)), the procedure starts by adressing the agents (ask turtles). The next line of code says, that the adressed agent gets the opinion of one random other agent. The subsequent lines of code determine what happens to the (new) opinion of the agent. If the other agent's opinion differs less from his own opinion than the epsilon (see above), the agent assumes the average opinion of the two opinions. This means that the opinions of the two agents are added together and divided by two. However, if the opinion of the other agent is further away than the respective (may vary) epsilon indicates, it checks whether the backfire effect exists. If the simulation is set to show that the effect exists, the opinion of the agent is half the distance away from the opinion of the other agent. At the end, the code indicates that the color of the agents depends on the opinion. However, this is only for illustration in the interface. Before the procedure ends, one more "tick" is counted as one time unit. 
+```{r goj, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in julia"), echo=FALSE}
+knitr::include_graphics("../Go_julia.png")
+```
+
+The "go" procedure in Julia is very similar. One difference is that the procedure is passed a configuration (config) at the beginning . Furthermore, an agent list with the agents in random order is passed. 
+```{r gon, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in Netlogo"), echo=FALSE}
+knitr::include_graphics("../Go_Netlogo.png")
+```
+
+## Bounded rationality model
+Since our primary goal was to compare the two programming languages with each other, we designed the parameters of the Netlogo model and the Julia model the identical way. Thus, we increased the comparability of the results of both models and reduced the complexity as much as possible. While in Netlogo the parameters for the simulation runs are determined in the Behavior Space (see Fig. \@ref(fig:nbehspc)), in Julia the initial settings are determined in the "main" procedure, what can be seen in Figure \@ref(fig:main).  
+
+As can be seen in Figure \@ref(fig:main) and \@ref(fig:nbehspc), we set the number of agents 100 to 500 in increments of hundreds (100:100:500). We varied the epsilon between 0.1 and 1 in increments of 0.1 and varied between with backfire-effect and without (true/false). We set the maximum number of steps to 100. 
+
+## What do we compare
+To find out whether both programming languages are euqually suitable to simulate our bounded rationality model, we look at severeal measurable criteria. These criteria include the outcomes and performance of both models. They further include how many lines of code are necessary to program the simulation. Another aspect, that we take into consideration, is, if learning Julia and Netlogo is equally difficult. For this aspect we consider both computer scientists who are familiar with other programming languages and a person who has no previous experience with programming languages. We further compare the explorability and scalability of both languages.
+
+<!--- Ca. 4 bis 5 Seiten --->
+# Results
+
+
+
+## Before: Comparison of Julia and Netlogo before the simulation starts
 ## Getting started with both languages
 Both Julia and Netlogo are languages that address both researchers and beginners. 
 Netlogo is derived from Logo a language that is aimed at children to lern programming. 
@@ -192,31 +222,11 @@ This means the user has to design all tools for agent-based modeling themselves.
 knitr::include_graphics("../main_julia.png")
 ```
 
-## Go procedure 
-Here we compare the "go" procedures, so what happens in each step of the simulation, of Netlogo and Julia (see Fig. \@ref(fig:goj) and Fi. \@ref(fig:gon)). Both codes look similar. In Netlogo (see Fig. \@ref(fig:gon)), the procedure starts by adressing the agents (ask turtles). The next line of code says, that the adressed agent gets the opinion of one random other agent. The subsequent lines of code determine what happens to the (new) opinion of the agent. If the other agent's opinion differs less from his own opinion than the epsilon (see above), the agent assumes the average opinion of the two opinions. This means that the opinions of the two agents are added together and divided by two. However, if the opinion of the other agent is further away than the respective (may vary) epsilon indicates, it checks whether the backfire effect exists. If the simulation is set to show that the effect exists, the opinion of the agent is half the distance away from the opinion of the other agent. At the end, the code indicates that the color of the agents depends on the opinion. However, this is only for illustration in the interface. Before the procedure ends, one more "tick" is counted as one time unit. 
-```{r goj, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in julia"), echo=FALSE}
-knitr::include_graphics("../Go_julia.png")
-```
 
-The "go" procedure in Julia is very similar. One difference is that the procedure is passed a configuration (config) at the beginning . Furthermore, an agent list with the agents in random order is passed. 
-```{r gon, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in Netlogo"), echo=FALSE}
-knitr::include_graphics("../Go_Netlogo.png")
-```
-
-## Bounded rationality model
-Since our primary goal was to compare the two programming languages with each other, we designed the parameters of the Netlogo model and the Julia model the identical way. Thus, we increased the comparability of the results of both models and reduced the complexity as much as possible. While in Netlogo the parameters for the simulation runs are determined in the Behavior Space (see Fig. \@ref(fig:nbehspc)), in Julia the initial settings are determined in the "main" procedure, what can be seen in Figure \@ref(fig:main).  
-
-As can be seen in Figure \@ref(fig:main) and \@ref(fig:nbehspc), we set the number of agents 100 to 500 in increments of hundreds (100:100:500). We varied the epsilon between 0.1 and 1 in increments of 0.1 and varied between with backfire-effect and without (true/false). We set the maximum number of steps to 100. 
-
-## What do we compare
-To find out whether both programming languages are euqually suitable to simulate our bounded rationality model, we look at severeal measurable criteria. These criteria include the outcomes and performance of both models. They further include how many lines of code are necessary to program the simulation. Another aspect, that we take into consideration, is, if learning Julia and Netlogo is equally difficult. For this aspect we consider both computer scientists who are familiar with other programming languages and a person who has no previous experience with programming languages. We further compare the explorability and scalability of both languages.
-
-<!--- Ca. 4 bis 5 Seiten --->
-# Results
+## Comparison of agent-based modeling results of Julia and Netlogo
 Following, we present some exemplarily results of our bounded rationality model. We also show, if the model created with Netlogo showed the same or different results as the model created with Julia. Based on these results, we compare the two considered programming languages and show their advantages and disadvantages.
 
-
-## Opinion change of agents
+### Opinion change of agents
 Following we consider, how the opinion of the agents changed during the simulation steps of the bounded rationality model with and without backfire effect. At this point we do not distinguish between the two programming languages used. 
 
 ```{r results,child='analysis.Rmd', eval=TRUE}
@@ -231,12 +241,12 @@ In example 4 (bottom right), also no backfire takes place. Here, the different o
 
 In contrast, in example 2 (top right) no majority opinion develops, but several groups with the same opinions form. In this example, the epsilon is higher than in the other examples, which leads the agents to accept opinions that differ more from their own than in the other examples. 
  
-## Influence of programming language, epsilon and backfire on opinion count
+### Influence of programming language, epsilon and backfire on opinion count
 After we looked at the opinion formation of the agents itself, we now consider, whether the epsilon, if the backfire effect takes place or not and the programming language has an influence on the existence of different opinions. To look at the influence of the enumerated factors, we consider (see Figure \@ref(fig:all_runs)) how many different opinions exist (y-axis). We further consider the standard deviations of the opinions (color) to analyse how different the opinions are.
 
 As Figure \@ref(fig:all_runs) shows, if the epsilon is higher than 0.55, practically all agents have only one opinion (sd = 0.0), regardless of whether the backfire effect takes place or not and which programming language is used. When the epsilon is lower than 0.55 and the backfire effect takes place, there are two opinions among the agents that diverge to the two extremes of opinion (sd = 0.5). In comparison, when the epsilon is lower than 0.55 and no backfire effect takes place, the agents have more different opinions, but the standard deviations of the opinions are lower (less bright) than in the simulations with backfire effect. The lower the epsilon is, the higher is the amount of opinions. Comparing the two programming languages, the amount of different opinions is a bit higher when NetLogo is used, but the difference is small. Overall, the two programming languages showed almost the same qualitative results. As Table 1 shows, the quantitative comarison of both languages showed, that except of three simulation runs, the t.test wasn´t significant. Thus the languages showed the same results.
 
-## Comparison of Julia and Netlogo
+## After: Comparison of Julia and Netlogo after the simulation
 When comparing both programming languages to create an agent-based model that simulates the bounded rationality model, Julia  proved to be a faster language. The whole simulaton took only 82.23 seconds, whereas the Netlogo simulation took 36 minutes. While the model calculation in Julia is much faster, Netlogo required less than half the lines of code. To write the bounded rationality model in Julia 97 lines of code were necessary, in Netlogo only 44 lines of code were necessary.
 
 When we consider how difficult it is to learn the two programming languages, we also have to take into account the previous knowledge of the users. Thus Netlogo proved to be a language that is easier to learn for people without programming skills. In contrast, people with previous programming skills reported, that it is easier to learn Julia, because it is more similar to other already used programming languages (for example Python). 
