@@ -48,7 +48,8 @@ data %>% group_by(run_number, epsilon, backfire, agent_count, program) %>%
   do(tidy(t.test(opinion_sd ~ program, data = .))) %>% 
   mutate(conf_width = abs(conf.low - conf.high )) %>% 
   arrange(p.value) %>% head(10) %>% 
-  select(epsilon, backfire, agent_count, t = statistic, p = p.value, df = parameter ) %>% knitr::kable()
+  select(epsilon, backfire, agent_count, `t-value` = statistic, `p-value` = p.value, `degrees of freedom` = parameter ) %>% 
+  knitr::kable(caption = "Comparison of the ten most different settings for both languages", booktabs = T, longtable = F)
   
 ```
 
