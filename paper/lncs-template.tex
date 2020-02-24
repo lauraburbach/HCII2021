@@ -50,6 +50,9 @@ $if(verbatim-in-note)$
 \usepackage{fancyvrb}
 \VerbatimFootnotes
 $endif$
+$for(header-includes)$
+$header-includes$
+$endfor$
 $if(tables)$
 \usepackage{longtable,booktabs}
 $endif$
