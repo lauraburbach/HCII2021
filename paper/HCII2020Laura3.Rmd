@@ -67,7 +67,7 @@ In this study, using Agent-based modelling we consider opinion formation process
 
 Therefore, we explain, which aspects lead to complexity, we introduce the method Agent-based modelling and the two programming languages Netlogo and Julia. Besides, we eplain what is known in theory about opinion formation or the spread of information. 
 
-## Complexity and how to modell it
+## Complexity and how to model it
 When examining opinion-forming processes, we look at a complex system. Such complex systems can be divided into several ontological levels or interacting subsystems on a micro- or macro-level [@Conte2012] We first have to look at how systems are structurally designed in order to deduce what leads to complexity [@Valdez2018human]. Further, complex systems lead to emergent phenomena. These complex systems and emergent phenomena are difficult to understand, because while it is easy to observe the individual system components, the resulting overall system cannot be considered as the sum of its parts. Instead, understanding the system behavior requires more than understanding the individual parts of the system [@Valdez2018human].  
 
 ### Complex vs. complicated
@@ -83,7 +83,7 @@ To analyse complex systems we need a suitable approach, such as simulations, whi
 
 Agent-based models always consist of the agents or individuals and the environment in which the agents reside [@Bonabeau2002Agentbased]. They are neither a representation of reality, nor fully realistic or even complete. Instead, they show a simplified reality. Nevertheless, agent-based models show behaviour on an individual level close to reality. By mapping the individual behavior, the behavior of the overall system can then be qualitatively observed [@Rouchier2008]. Agent-based models are well suited to replicate data and present the results to non-experts [@Kiesling2012]. The use of a method always requires an evaluation of the method. Evaluating agent-based models is not easy. In order to evaluate them, independent replicating and comparing with other model as well as a validation are necessary [@Rouchier2008].
 
-The basis of agent-based modeling is the single agent or the individual. This agent is modelled programmatically as a template. In simulation, due agents make their own decisions based on how they perceive the environment in which they are situated. Thus, in our model
+The basis of agent-based modeling is the single agent or the individual. This agent is modelled programmatically as a template. In simulation, due agents make their own decisions based on how they perceive the environment in which they are situated. 
 The perceptions of an agent usually determine the behavioral intent of the agent. If the agents are in a social network, as in our model, they influence their neighbours in the next iteration by their behavioural intention or the behaviour they show. To determine the probability of organizational acceptance, we analyze the results of several agent-based simulations.
 
 A simple way to create agent-based models is to use software toolkits developed for the creation of simulations. These include the Netlogo toolkit considered in this study. With the use of such toolkits, it is easy to formulate the behavior of the individual agents. They also usually contain some useful interfaces. The interfaces allow to visualize the simulation states, interact with the simulation parameters and export the simulation results. In addition, they usually contain a batch mode. This is used to run a large number of simulations. Optimization strategies, such as genetic algorithms, help to find the most suitable parameters [@Calero2019].
@@ -99,18 +99,14 @@ however NetLogo also provides a graphical tool for quickly constructing interfac
 Netlogo is visually appealing because the user is provided with a user interface to create and test an agent-based model. In addition to the user interface that simplifies the initial creation of a model, Netlogo also includes a batch mode that allows the user to run any number (usually several hundred) of simulations.
 
 ### Interface
-An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface. Figure 1 shows the Interface of our simulation. 
-
-```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Interface of Netlogo"), echo=FALSE}
+An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface. Figure 1 shows the Interface of our simulation. The interface shows a spatial 2D view of the model environment. For Netlogo, this environment is a square grid (there are other platforms that support hexahonal grids, such as Mason and Repast). The Netlogo user can add further elements to this view. These include buttons for setting the model parameters and diagrams that can be used to monitor the results. The added elements can be moved anywhere on the interface. 
+```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Interface of our bounded rationality model in Netlogo"), echo=FALSE}
 knitr::include_graphics("../Netlogo.png")
 ```
 
-The interface shows a spatial 2D view of the model environment. For Netlogo, this environment is a square grid (there are other platforms that support hexahonal grids, such as Mason and Repast). The Netlogo user can add further elements to this view. These include buttons for setting the model parameters and diagrams that can be used to monitor the results. The added elements can be moved anywhere on the interface. 
 
 ## Julia
 Julia was initially introduced by a group of computer scientists and mathematicians at MIT under the direction of Alan Edelman. Compared to other programming languages Julia is considered fast, easy to learn and use and it is open source. Julia has a fast numerical speed because it is based on a LLVM (Low Level Virtual Machine) based JIT (Just-in-Time) compiler. Further advantages of Julia compared to other programming languages are that it supports parallelization or practical functional programming and can be easily combined with other programming languages and libraries. Finally, there is already a group of active users who develop packages (and thereby add functions to the base language; as of April 6, 2019, there are 1774 registered packages). 
-
-
 
 ## Opinion formation and bounded rationality
 In describing social phenomena, social scientists traditionally have tended to employ causal modeling techniques.
@@ -154,7 +150,7 @@ To built the agent based models, we used either the Julia programming language o
 ## Basics of Agent-based models 
 An agent-based model usually contains a setup and a go procedure. The "setup" procedure defines a kind of basic state at the beginning of the simulation. The "go" procedure then specifies what happens in a single step of the simulation. 
 
-In Netlogo the "setup" procedure usually looks like in Figure X. In Netlogo, procedures always start with "to" and end with "end". Clear-all makes the world go back to its initial, empty state. For example, if colors were assigned to the spots where the agents are located, they will now turn black again. Create-turtles creates the specified number of turtles, here 100. The turtles usually start at the origin, i.e. in the middle of patch 0.0. The code in the square brackets after create-turtles here indicates that the turtles start at a random x and y coordinate. The square brackets could also be used to create other commands for the agents. Reset-ticks makes sure that the tick counter starts. Once this code is created, the simulation starts in the interface by clicking the "Setup" button. 
+In Netlogo the "setup" procedure usually looks like in Figure 2. In Netlogo, procedures always start with "to" and end with "end". Clear-all makes the world go back to its initial, empty state. For example, if colors were assigned to the spots where the agents are located, they will now turn black again. Create-turtles creates the specified number of turtles, here 100. The turtles usually start at the origin, i.e. in the middle of patch 0.0. The code in the square brackets after create-turtles here indicates that the turtles start at a random x and y coordinate. The square brackets could also be used to create other commands for the agents. Reset-ticks makes sure that the tick counter starts. Once this code is created, the simulation starts in the interface by clicking the "Setup" button. 
 
 
 <!--
@@ -206,19 +202,15 @@ knitr::include_graphics("../main_julia.png")
 
 
 ## Go procedure 
-Here we compare the "go" procedures of Netlogo and Julia. Both codes look similar. In Netlogo (see Figure X), the procedure starts by adressing the agents (ask turtles)
-
+Here we compare the "go" procedures, so what happens in each step of the simulation, of Netlogo and Julia (see Figure 3 and 4). Both codes look similar. In Netlogo (see Figure 4), the procedure starts by adressing the agents (ask turtles). The next line of code says, that the adressed agent gets the opinion of one random other agent. The subsequent lines of code determine what happens to the (new) opinion of the agent. If the other agent's opinion differs less from his own opinion than the epsilon (see above), the agent assumes the average opinion of the two opinions. This means that the opinions of the two agents are added together and divided by two. However, if the opinion of the other agent is further away than the respective (may vary) epsilon indicates, it checks whether the backfire effect exists. If the simulation is set to show that the effect exists, the opinion of the agent is half the distance away from the opinion of the other agent. At the end, the code indicates that the color of the agents depends on the opinion. However, this is only for illustration in the interface. Before the procedure ends, one more "tick" is counted as one time unit. 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in julia"), echo=FALSE}
 knitr::include_graphics("../Go_julia.png")
 ```
 
+The "go" procedure in Julia is very similar. One difference is that the procedure is passed a configuration (config) at the beginning . Furthermore, an agent list with the agents in random order is passed. 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Go procedure in Netlogo"), echo=FALSE}
 knitr::include_graphics("../Go_Netlogo.png")
 ```
-
-
-
-
 
 
 
@@ -280,6 +272,11 @@ For people who have never used a programming language before and are not support
 One other aspect, that could be taken into account, is the time, that is needed to run the simulation. Here Julia turned out to be much faster. But, in many research areas or for many research questions it does not really matter, whether the language is really fast. One aspect, that is probably more important is, that very big simulations in Netlogo require high computing power and that the computers sometimes crash, making it impossible to calculate the model In this case Julia makes it possible to calculate the simulation without any problems. 
 
 Of course, we have only focused on one very simple bounded rationality model, so that we would have to create further simulations with both languages to be able to make statements about the generality. 
+
+Historically, the basis for analytical opinion dynamics models is given by psychological research and philosophical theories about social influence (e.g., [@French1956];[@Wagner1978]).
+And simulations based on those models have frequently proven to reliably enough reproduce real-life phenomena [@Vespignani2012].
+However, as @Flache2017 argue, there is a lack of recent empirical studies reassessing and replicating the assumptions underlying those models, let alone studies examining the size of epsilon in real-life interactions.
+In future research, finding a way to link analytical opinion dynamics models with contemporary empirical psychological findings would be desirable.
 
 <!--- Ca. 1/2 bis 1 Seite --->
 # Conclusion and outlook
