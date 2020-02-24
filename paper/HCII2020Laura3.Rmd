@@ -9,13 +9,14 @@ link-citations: true
 header-includes:
   - \input{listings.tex}
 output:
-  pdf_document:
+  bookdown::pdf_document2:
     fig_caption: true
     keep_tex: false
     template: lncs-template.tex
     md_extensions: +footnotes
     citation_package: biblatex
     dev: pdf
+    
     
 ---
 
@@ -155,13 +156,14 @@ An agent-based model usually contains a setup and a go procedure. The "setup" pr
 In Netlogo the "setup" procedure usually looks like in Figure X. In Netlogo, procedures always start with "to" and end with "end". Clear-all makes the world go back to its initial, empty state. For example, if colors were assigned to the spots where the agents are located, they will now turn black again. Create-turtles creates the specified number of turtles, here 100. The turtles usually start at the origin, i.e. in the middle of patch 0.0. The code in the square brackets after create-turtles here indicates that the turtles start at a random x and y coordinate. The square brackets could also be used to create other commands for the agents. Reset-ticks makes sure that the tick counter starts. Once this code is created, the simulation starts in the interface by clicking the "Setup" button. 
 
 
+<!--
 \begin{lstlisting}[caption = The setup method in NetLogo]
 to setup
   clear-all
   create-turtles 100 [ setxy random-xcor random-ycor ]
   reset-ticks
 end
-\end{lstlisting}
+\end{lstlisting}-->
 
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("setup procedure in Netlogo"), echo=FALSE}
 knitr::include_graphics("../setup11.png")
@@ -172,21 +174,32 @@ In our bounded rationality model, we defined the maximum number of agents, the m
 
 
 ## Getting started with both languages
+Both Julia and Netlogo are languages that address both researchers and beginners. 
+Netlogo is derived from Logo a language that is aimed at children to lern programming. 
+The core aim of Netlogo is agent-based modeling and it has several primites for this purpose.
+Julia is aimed at scientists that require both performance and understandable code. 
+The core aim of Julia is to make code fast, reusable and easy to understand.
+This quick introduction by no means covers the breadth of both of these languages, it aims to provide a high-level overview.
 
+## Netlogo
+Netlogo as a modelling language for agent-based modeling is very well suited for beginners wanting to use agent-based modeling. It comes with a rich variety of example models that users can explore and provides a graphical user interface and a graphical user interface toolkit to create models that even non-experts can use. 
+Netlogo provides methods for inspecting the model (reporters and visualizations) and for exploring the impact of model parameters on system behavior (i.e. the *behavior space* feature). The latter allows turning of the GUI for faster simulations (see Fig. \@ref(fig:nbehspc)).
+
+Netlogo provides immediate visual feedback for the user of an agent-based model and has easy to understand primitives that allow modelling of agent behavior, agent interactions, and agent-environment interactions. It provides an API for extensions, to allow other researchers to complement the functionality of Netlogo.
+
+Overall, it is very easy to start using Netlogo. However, creating complex models requires understanding of usage contexts in the language. People coming to Netlogo with a computer science background may find some of the language concepts unintuitive and clunky. Several of the authors of this paper have found Netlogo syntax to be confusing and unecessary simplistic. 
+
+```{r nbehspc, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Behavior Space in Netlogo"), echo=FALSE}
+knitr::include_graphics("../BehaviorSpace2.png")
+```
 
 ## Julia
+Julia is not a language specifically written for agent-based modeling.
+
 ```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("main procedure in julia"), echo=FALSE}
 knitr::include_graphics("../main_julia.png")
 ```
 
-## Netlogo
-
-
-
-
-```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Behavior Space in Netlogo"), echo=FALSE}
-knitr::include_graphics("../BehaviorSpace2.png")
-```
 
 
 ## Go procedure 

@@ -44,7 +44,7 @@ data %>% group_by(run_number, epsilon, backfire, agent_count, program) %>%
 
 As Figure 2 shows, if the epsilon is higher than 0.55, practically all agents have only one opinion (sd = 0.0), regardless of whether the backfire effect takes place or not and which programming language is used. When the epsilon is lower than 0.55 and the backfire effect takes place, there are two opinions among the agents that diverge to the two extremes of opinion (sd = 0.5). In comparison, when the epsilon is lower than 0.55 and no backfire effect takes place, the agents have more different opinions, but the standard deviations of the opinions are lower (less bright) than in the simulations with backfire effect. The lower the epsilon is, the higher is the amount of opinions. Comparing the two programming languages, the amount of different opinions is a bit higher when NetLogo is used, but the difference is small. Overall, the two programming languages showed almost the same qualitative results. As Table 1 shows, the quantitative comarison of both languages showed, that except of three simulation runs, the t.test wasn´t significant. Thus the languages showed the same results. 
 
-```{r}
+```{r table}
 library(broom)
 
 
@@ -56,7 +56,8 @@ data %>% group_by(run_number, epsilon, backfire, agent_count, program) %>%
   do(tidy(t.test(opinion_sd ~ program, data = .))) %>% 
   mutate(conf_width = abs(conf.low - conf.high )) %>% 
   arrange(p.value) %>% head(10) %>% 
-  select(epsilon, backfire, agent_count, t = statistic, p = p.value, df = parameter ) %>% knitr::kable()
+  select(epsilon, backfire, agent_count, t = statistic, p = p.value, df = parameter ) %>% 
+  knitr::kable(caption = "Overview of strongest differences between languages", booktabs = T, longtable = F)
   
 ```
 
