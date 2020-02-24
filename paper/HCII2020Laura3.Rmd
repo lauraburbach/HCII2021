@@ -104,8 +104,8 @@ however NetLogo also provides a graphical tool for quickly constructing interfac
 Netlogo is visually appealing because the user is provided with a user interface to create and test an agent-based model. In addition to the user interface that simplifies the initial creation of a model, Netlogo also includes a batch mode that allows the user to run any number (usually several hundred) of simulations.
 
 ### Interface
-An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface. Figure 1 shows the Interface of our simulation. The interface shows a spatial 2D view of the model environment. For Netlogo, this environment is a square grid (there are other platforms that support hexahonal grids, such as Mason and Repast). The Netlogo user can add further elements to this view. These include buttons for setting the model parameters and diagrams that can be used to monitor the results. The added elements can be moved anywhere on the interface. 
-```{r, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Interface of our bounded rationality model in Netlogo"), echo=FALSE}
+An advantageous feature of Netlogo, is that the platform contains an easy to use, clear and attractive interface. Figure \@ref(fig:interface) shows the Interface of our simulation. The interface shows a spatial 2D view of the model environment. For Netlogo, this environment is a square grid (there are other platforms that support hexahonal grids, such as Mason and Repast). The Netlogo user can add further elements to this view. These include buttons for setting the model parameters and diagrams that can be used to monitor the results. The added elements can be moved anywhere on the interface. 
+```{r interface, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Interface of our bounded rationality model in Netlogo"), echo=FALSE}
 knitr::include_graphics("../Netlogo.png")
 ```
 
