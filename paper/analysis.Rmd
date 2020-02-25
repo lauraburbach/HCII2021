@@ -36,7 +36,7 @@ data %>% group_by(run_number, epsilon, backfire, agent_count, program) %>%
 ```
 
 
-```{r}
+```{r table}
 library(broom)
 
 
