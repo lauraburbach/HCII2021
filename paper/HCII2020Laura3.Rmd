@@ -12,7 +12,7 @@ header-includes:
 output:
   bookdown::pdf_document2:
     fig_caption: true
-    keep_tex: false
+    keep_tex: true
     template: lncs-template.tex
     md_extensions: +footnotes
     citation_package: biblatex
