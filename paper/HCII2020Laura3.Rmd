@@ -145,7 +145,7 @@ end
 \end{lstlisting}-->
 
 ```{r setup, out.width="1\\linewidth", include=TRUE, fig.align="center", fig.cap=c("Setup procedure in Netlogo"), echo=FALSE}
-knitr::include_graphics("../setupNlogo.png")
+knitr::include_graphics("../setupnew.png")
 ```
 
 ## Bounded rationality model
